@@ -1,2 +1,20 @@
 C:\Users\DAM212\AppData\Local\Temporary Projects\TPV VB\bin\Debug\TPV VB.exe.config
 C:\Users\DAM212\Desktop\TPV VB\TPV VB\bin\Debug\TPV VB.exe.config
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\bin\Debug\TPV VB.exe
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\bin\Debug\TPV VB.pdb
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\bin\Debug\TPV VB.xml
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\bin\Debug\Biblioteca_TPV.dll
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\bin\Debug\Utiles.dll
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\bin\Debug\Biblioteca_TPV.pdb
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\bin\Debug\Biblioteca_TPV.xml
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\bin\Debug\Utiles.pdb
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\bin\Debug\Utiles.xml
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\obj\Debug\TPV VB.vbprojResolveAssemblyReference.cache
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\obj\Debug\TPV_VB.Facturas.resources
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\obj\Debug\TPV_VB.Inicio.resources
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\obj\Debug\TPV_VB.GestionUsuarios.resources
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\obj\Debug\TPV_VB.Resources.resources
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\obj\Debug\TPV VB.vbproj.GenerateResource.Cache
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\obj\Debug\TPV VB.exe
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\obj\Debug\TPV VB.xml
+C:\Users\DAM212\Desktop\TPV VB\TPV VB\obj\Debug\TPV VB.pdb
