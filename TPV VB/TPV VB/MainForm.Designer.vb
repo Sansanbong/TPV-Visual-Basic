@@ -106,8 +106,10 @@ Partial Class Inicio
         Me.ClientSize = New System.Drawing.Size(1156, 636)
         Me.Controls.Add(Me.menuStrip)
         Me.Controls.Add(Me.panelBotones)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.menuStrip
+        Me.MaximizeBox = False
         Me.Name = "Inicio"
         Me.Text = "Inicio"
         Me.panelBotones.ResumeLayout(False)
