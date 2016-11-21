@@ -2,7 +2,6 @@
 Imports Biblioteca_TPV.negocio
 
 Public Class Facturas
-
     Private factura As Factura
     Private acceso As AccesoFicheros
     Private productos As ArrayList
@@ -10,6 +9,7 @@ Public Class Facturas
 
     Private Sub Facturas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Location = New Point(275, 0)
+
         factura = New Factura
         acceso = New AccesoFicheros
         productos = acceso.leerProductos

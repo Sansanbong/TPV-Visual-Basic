@@ -162,6 +162,30 @@
   <ItemGroup>
     <None Include="Resources\fondo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bamboo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondolargo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helecho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panelbamboo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panelLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refrescar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

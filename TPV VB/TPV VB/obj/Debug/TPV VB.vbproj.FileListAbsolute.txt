@@ -38,3 +38,21 @@ C:\Users\sanch\Desktop\TPV VB\TPV VB\obj\Debug\TPV_VB.GestionUsuarios.resources
 C:\Users\sanch\Desktop\TPV VB\TPV VB\obj\Debug\TPV_VB.Resources.resources
 C:\Users\sanch\Desktop\TPV VB\TPV VB\obj\Debug\TPV VB.vbproj.GenerateResource.Cache
 C:\Users\sanch\Desktop\TPV VB\TPV VB\obj\Debug\TPV_VB.Login.resources
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\bin\Debug\TPV VB.exe.config
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV VB.exe
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV VB.xml
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV VB.pdb
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\bin\Debug\TPV VB.exe
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\bin\Debug\TPV VB.pdb
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\bin\Debug\TPV VB.xml
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\bin\Debug\Biblioteca_TPV.pdb
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\bin\Debug\Biblioteca_TPV.xml
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\bin\Debug\Utiles.pdb
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\bin\Debug\Utiles.xml
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV VB.vbprojResolveAssemblyReference.cache
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV_VB.Facturas.resources
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV_VB.Login.resources
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV_VB.Inicio.resources
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV_VB.GestionUsuarios.resources
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV_VB.Resources.resources
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV VB.vbproj.GenerateResource.Cache

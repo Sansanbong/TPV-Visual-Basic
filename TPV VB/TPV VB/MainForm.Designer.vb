@@ -35,7 +35,7 @@ Partial Class Inicio
         '
         Me.menuStrip.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip.Name = "menuStrip"
-        Me.menuStrip.Size = New System.Drawing.Size(1156, 24)
+        Me.menuStrip.Size = New System.Drawing.Size(1161, 24)
         Me.menuStrip.TabIndex = 8
         Me.menuStrip.Text = "MenuStrip1"
         '
@@ -103,10 +103,12 @@ Partial Class Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1156, 636)
+        Me.BackColor = System.Drawing.Color.SkyBlue
+        Me.BackgroundImage = Global.TPV_VB.My.Resources.Resources.fondolargo
+        Me.ClientSize = New System.Drawing.Size(1161, 641)
         Me.Controls.Add(Me.menuStrip)
         Me.Controls.Add(Me.panelBotones)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.menuStrip
         Me.MaximizeBox = False

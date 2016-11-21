@@ -2,9 +2,10 @@
 Public Class Inicio
 
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim form As New Login
+        Dim form As New Login(Me)
         form.MdiParent = Me
         form.Show()
+
     End Sub
 
     Private Sub btnFacturas_Click(sender As Object, e As EventArgs) Handles btnFacturas.Click
