@@ -56,3 +56,4 @@ K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV_VB.In
 K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV_VB.GestionUsuarios.resources
 K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV_VB.Resources.resources
 K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV VB.vbproj.GenerateResource.Cache
+K:\DAM\DI\EjerciciosVB\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV_VB.Sesion.resources
