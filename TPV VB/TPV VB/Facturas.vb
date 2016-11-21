@@ -8,6 +8,8 @@ Public Class Facturas
     Private panelBtnProductos As Panel
 
     Private Sub Facturas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Location = New Point(275, 0)
+
         factura = New Factura
         acceso = New AccesoFicheros
         productos = acceso.leerProductos
