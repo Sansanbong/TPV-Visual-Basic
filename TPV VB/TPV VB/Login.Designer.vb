@@ -22,55 +22,141 @@ Partial Class Login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
+        Me.panelLogin = New System.Windows.Forms.Panel()
+        Me.lblLogin = New System.Windows.Forms.Label()
+        Me.lblUsuario = New System.Windows.Forms.Label()
+        Me.btnAcceder = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtContrasenya = New System.Windows.Forms.TextBox()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.picLogo = New System.Windows.Forms.PictureBox()
+        Me.picPanelDescripcion = New System.Windows.Forms.PictureBox()
+        Me.panelLogin.SuspendLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picPanelDescripcion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
+        'panelLogin
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(174, 245)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(437, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "te he puesto ya el tamaño del formulario y te he quitado los bordes como en los s" & _
-    "andwiches"
+        Me.panelLogin.BackColor = System.Drawing.Color.Transparent
+        Me.panelLogin.Controls.Add(Me.lblLogin)
+        Me.panelLogin.Controls.Add(Me.lblUsuario)
+        Me.panelLogin.Controls.Add(Me.btnAcceder)
+        Me.panelLogin.Controls.Add(Me.Label2)
+        Me.panelLogin.Controls.Add(Me.txtContrasenya)
+        Me.panelLogin.Controls.Add(Me.txtUsuario)
+        Me.panelLogin.Location = New System.Drawing.Point(95, 304)
+        Me.panelLogin.Name = "panelLogin"
+        Me.panelLogin.Size = New System.Drawing.Size(257, 242)
+        Me.panelLogin.TabIndex = 11
+        '
+        'lblLogin
+        '
+        Me.lblLogin.AutoSize = True
+        Me.lblLogin.BackColor = System.Drawing.Color.Transparent
+        Me.lblLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblLogin.Location = New System.Drawing.Point(98, 19)
+        Me.lblLogin.Name = "lblLogin"
+        Me.lblLogin.Size = New System.Drawing.Size(77, 26)
+        Me.lblLogin.TabIndex = 21
+        Me.lblLogin.Text = "Log in"
+        '
+        'lblUsuario
+        '
+        Me.lblUsuario.AutoSize = True
+        Me.lblUsuario.BackColor = System.Drawing.Color.Transparent
+        Me.lblUsuario.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.lblUsuario.Location = New System.Drawing.Point(67, 71)
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(43, 13)
+        Me.lblUsuario.TabIndex = 20
+        Me.lblUsuario.Text = "Usuario"
+        '
+        'btnAcceder
+        '
+        Me.btnAcceder.Location = New System.Drawing.Point(85, 201)
+        Me.btnAcceder.Name = "btnAcceder"
+        Me.btnAcceder.Size = New System.Drawing.Size(75, 23)
+        Me.btnAcceder.TabIndex = 19
+        Me.btnAcceder.Text = "Acceder"
+        Me.btnAcceder.UseVisualStyleBackColor = True
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(251, 197)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label2.Location = New System.Drawing.Point(69, 142)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(249, 13)
-        Me.Label2.TabIndex = 14
-        Me.Label2.Text = "El formulario Login es el que se carga aquí al iniciar"
+        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.TabIndex = 16
+        Me.Label2.Text = "Contraseña"
         '
-        'Label3
+        'txtContrasenya
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(202, 155)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(368, 13)
-        Me.Label3.TabIndex = 13
-        Me.Label3.Text = "holi, te cuento, el futuro son los MDIcontainer. Mirate el código del MainForm"
+        Me.txtContrasenya.Location = New System.Drawing.Point(70, 158)
+        Me.txtContrasenya.MaxLength = 11
+        Me.txtContrasenya.Name = "txtContrasenya"
+        Me.txtContrasenya.Size = New System.Drawing.Size(101, 20)
+        Me.txtContrasenya.TabIndex = 18
+        '
+        'txtUsuario
+        '
+        Me.txtUsuario.Location = New System.Drawing.Point(70, 87)
+        Me.txtUsuario.MaxLength = 10
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(131, 20)
+        Me.txtUsuario.TabIndex = 17
+        '
+        'picLogo
+        '
+        Me.picLogo.BackColor = System.Drawing.Color.Transparent
+        Me.picLogo.BackgroundImage = Global.TPV_VB.My.Resources.Resources.logo
+        Me.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picLogo.Location = New System.Drawing.Point(110, 51)
+        Me.picLogo.Name = "picLogo"
+        Me.picLogo.Size = New System.Drawing.Size(170, 150)
+        Me.picLogo.TabIndex = 9
+        Me.picLogo.TabStop = False
+        '
+        'picPanelDescripcion
+        '
+        Me.picPanelDescripcion.BackColor = System.Drawing.Color.Transparent
+        Me.picPanelDescripcion.BackgroundImage = Global.TPV_VB.My.Resources.Resources.panelbamboo
+        Me.picPanelDescripcion.Location = New System.Drawing.Point(449, -23)
+        Me.picPanelDescripcion.Name = "picPanelDescripcion"
+        Me.picPanelDescripcion.Size = New System.Drawing.Size(381, 603)
+        Me.picPanelDescripcion.TabIndex = 10
+        Me.picPanelDescripcion.TabStop = False
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(882, 612)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.panelLogin)
+        Me.Controls.Add(Me.picLogo)
+        Me.Controls.Add(Me.picPanelDescripcion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Login"
         Me.Text = "Login"
+        Me.panelLogin.ResumeLayout(False)
+        Me.panelLogin.PerformLayout()
+        CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picPanelDescripcion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents panelLogin As System.Windows.Forms.Panel
+    Friend WithEvents lblLogin As System.Windows.Forms.Label
+    Friend WithEvents lblUsuario As System.Windows.Forms.Label
+    Friend WithEvents btnAcceder As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents txtContrasenya As System.Windows.Forms.TextBox
+    Friend WithEvents txtUsuario As System.Windows.Forms.TextBox
+    Friend WithEvents picLogo As System.Windows.Forms.PictureBox
+    Friend WithEvents picPanelDescripcion As System.Windows.Forms.PictureBox
 End Class
