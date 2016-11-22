@@ -34,13 +34,16 @@ Namespace ficheros
                 Seek(FICH_USUARIOS, posicion)
                 FileGet(FICH_USUARIOS, estructura)
 
-                If usuario.getDatos.contrasenya = estructura.contrasenya.Trim Then
+                If usuario.getDatos.contrasenya.Trim = estructura.contrasenya.Trim Then
+                    FileClose(FICH_USUARIOS)
                     Return New Usuario(estructura)
                 Else
+                    FileClose(FICH_USUARIOS)
                     Return Nothing
                 End If
-                FileClose(FICH_USUARIOS)
+
             Else
+
                 Return Nothing
             End If
 
@@ -105,7 +108,7 @@ Namespace ficheros
 
                     FileGet(FICH_USUARIOS, estructura, posicion)
 
-                    If estructura.nick.Trim = usuario.getDatos.nick Then
+                    If estructura.nick.Trim = usuario.getDatos.nick.Trim Then
                         FileClose(FICH_USUARIOS)
                         Return posicion
 
@@ -180,6 +183,7 @@ Namespace ficheros
 
             Try
                 posicion = buscarUsuario(usuario)
+
                 If posicion = -1 Then
                     Return 1
                 Else
@@ -194,6 +198,7 @@ Namespace ficheros
                     Return 0
                 End If
             Catch ex As Exception
+                FileClose(FICH_USUARIOS)
                 Return 2
 
             End Try
