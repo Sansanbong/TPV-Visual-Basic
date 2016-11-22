@@ -37,18 +37,28 @@ Public Class GestionUsuarios
 
             resultadoPass = InputBox("Por medidas de seguridad, por favor: Introduzca la clave de administrador.")
 
-            ' If resultadoPass.Trim = Usuario.getDatos.contrasenya.Trim Then
+            If resultadoPass.Trim = usuario.getDatos.contrasenya.Trim Then
 
-            If acceso.addUsuario(user) = 1 Then
-                MsgBox(mensaje, 48, "Usuario ya existente")
+                If acceso.addUsuario(user) = 1 Then
+                    MsgBox(mensaje, 48, "Usuario ya existente")
+                Else
+                    MsgBox("¡Usuario insertado con éxito!")
+                    cargarUsuarios()
+
+                    txtNombreEmpleado.Clear()
+                    txtPass.Clear()
+                    txtRol.Clear()
+                    txtNombreUsuario.Clear()
+                    txtApellidos.Clear()
+                    txtDNI.Clear()
+                    txtTelefono.Clear()
+                    txtMail.Clear()
+
+                End If
+
             Else
-                MsgBox("¡Usuario insertado con éxito!")
-                cargarUsuarios()
+                MsgBox("Contraseña incorrecta.")
             End If
-
-            'Else
-            '     MsgBox("Contraseña incorrecta.")
-            '  End If
 
 
         Else
@@ -62,6 +72,9 @@ Public Class GestionUsuarios
         Dim mensaje As String = ""
         If Not validator.validarTexto(txtNombreUsuario.Text) Then
             mensaje = vbNewLine & "   - El usuario debe contener sólo letras"
+        End If
+        If Not validator.validarTexto(txtPass.Text) Then
+            mensaje = vbNewLine & "   - La contraseña debe contener sólo letras"
         End If
 
         If Not validator.validarTexto(txtNombreEmpleado.Text) Then
@@ -125,7 +138,7 @@ Public Class GestionUsuarios
     End Sub
     'Función encargada de leer los usuarios del fichero usuarios.txt y
     'cargarlos en el combobox excepto si son admins.
-    Private Sub cargarUsuarios()
+    Public Sub cargarUsuarios()
         comboUsuarios.Items.Clear()
 
         usuarios = acceso.leerUsuarios
