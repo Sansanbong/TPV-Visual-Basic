@@ -315,7 +315,10 @@ Namespace ficheros
                         posicion = posicion + 1
                         If estructura.id.Trim = id Then
                             FileClose(FICH_PRODUCTOS)
-                            Dim producto As New Producto(estructura)
+                            Dim producto As New Producto(estructura.id.Trim,
+                                              estructura.nombre.Trim,
+                                              estructura.precio,
+                                              estructura.categoria.Trim)
                             Return producto
                         End If
                     End While
