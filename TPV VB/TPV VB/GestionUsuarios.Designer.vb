@@ -54,11 +54,11 @@ Partial Class GestionUsuarios
         '
         'grupoBorradoUsuario
         '
-        Me.grupoBorradoUsuario.BackColor = System.Drawing.Color.Transparent
+        Me.grupoBorradoUsuario.BackColor = System.Drawing.Color.Coral
         Me.grupoBorradoUsuario.Controls.Add(Me.btnRefrescar)
         Me.grupoBorradoUsuario.Controls.Add(Me.btnBorrarModificar)
         Me.grupoBorradoUsuario.Controls.Add(Me.comboUsuarios)
-        Me.grupoBorradoUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grupoBorradoUsuario.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grupoBorradoUsuario.Location = New System.Drawing.Point(407, 79)
         Me.grupoBorradoUsuario.Name = "grupoBorradoUsuario"
         Me.grupoBorradoUsuario.Size = New System.Drawing.Size(445, 98)
@@ -98,11 +98,11 @@ Partial Class GestionUsuarios
         '
         'grupoInsercionUsuario
         '
-        Me.grupoInsercionUsuario.BackColor = System.Drawing.Color.Transparent
+        Me.grupoInsercionUsuario.BackColor = System.Drawing.Color.Coral
         Me.grupoInsercionUsuario.Controls.Add(Me.grupoUsuario)
         Me.grupoInsercionUsuario.Controls.Add(Me.btnInsertar)
         Me.grupoInsercionUsuario.Controls.Add(Me.grupoDatosUsuario)
-        Me.grupoInsercionUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grupoInsercionUsuario.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grupoInsercionUsuario.Location = New System.Drawing.Point(31, 7)
         Me.grupoInsercionUsuario.Name = "grupoInsercionUsuario"
         Me.grupoInsercionUsuario.Size = New System.Drawing.Size(354, 599)
@@ -112,7 +112,7 @@ Partial Class GestionUsuarios
         '
         'grupoUsuario
         '
-        Me.grupoUsuario.BackColor = System.Drawing.Color.Transparent
+        Me.grupoUsuario.BackColor = System.Drawing.Color.Coral
         Me.grupoUsuario.Controls.Add(Me.lblNombreUsuario)
         Me.grupoUsuario.Controls.Add(Me.txtNombreUsuario)
         Me.grupoUsuario.Controls.Add(Me.lblContrasenya)
@@ -173,7 +173,7 @@ Partial Class GestionUsuarios
         '
         'grupoDatosUsuario
         '
-        Me.grupoDatosUsuario.BackColor = System.Drawing.Color.Transparent
+        Me.grupoDatosUsuario.BackColor = System.Drawing.Color.Coral
         Me.grupoDatosUsuario.Controls.Add(Me.txtMail)
         Me.grupoDatosUsuario.Controls.Add(Me.Label20)
         Me.grupoDatosUsuario.Controls.Add(Me.txtTelefono)
@@ -312,6 +312,7 @@ Partial Class GestionUsuarios
         Me.ClientSize = New System.Drawing.Size(882, 612)
         Me.Controls.Add(Me.grupoBorradoUsuario)
         Me.Controls.Add(Me.grupoInsercionUsuario)
+        Me.Font = New System.Drawing.Font("Calibri", 8.25!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "GestionUsuarios"
         Me.Text = "GestionUsuarios"

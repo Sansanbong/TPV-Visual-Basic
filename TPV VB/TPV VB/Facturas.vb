@@ -13,7 +13,25 @@ Public Class Facturas
         factura = New Factura
         acceso = New AccesoFicheros
         productos = acceso.leerProductos
+
+        btnVistaPrevia.Enabled = False
+        btnImprimir.Enabled = False
+
     End Sub
+
+    'Búsqueda de producto por ID en la colección de productos guardada en memoria
+    Public Function buscarProducto(ByVal id As String)
+        Dim producto As Producto
+
+        For i = 0 To productos.Count - 1
+            producto = CType(productos.Item(i), Producto)
+            If (producto.getStructure.id.Trim = id) Then
+                Return producto
+            End If
+        Next
+
+        Return Nothing
+    End Function
 
     '--------------------------FACTURAS----------------------------------
 
@@ -61,8 +79,6 @@ Public Class Facturas
         generarBotonesProducto(categoria)
     End Sub
 
-
-
     'Genera los botones de los productos de una categoría
     Private Sub generarBotonesProducto(ByVal categoria As String)
         Dim prodsCat As ArrayList = leerProductosCategoria(categoria)
@@ -75,8 +91,8 @@ Public Class Facturas
         panelBtnProductos = New Panel
         With panelBtnProductos
             .Name = "panelPodructos"
-            .Location = New Point(46, 58)
-            .Size = New Size(347, 552)
+            .Location = panelCategorias.Location
+            .Size = panelCategorias.Size
             .BackColor = Color.Azure
             .BorderStyle = BorderStyle.FixedSingle
         End With
@@ -165,6 +181,14 @@ Public Class Facturas
             lbTotal.Items.Add(total)
         Next
 
+        If factura.getLineasPedido.Count <> 0 Then
+            btnImprimir.Enabled = True
+            btnVistaPrevia.Enabled = True
+        Else
+            btnImprimir.Enabled = False
+            btnVistaPrevia.Enabled = False
+        End If
+
     End Sub
 
     'LIMPIAR LISTAS
@@ -199,7 +223,22 @@ Public Class Facturas
     'BOTÓN BORRAR CONJUNTO DE LÍNEAS
     Private Sub btnLimpiarLista_Click(sender As Object, e As EventArgs) Handles btnQuitarLineas.Click
 
+        If lbCodProd.SelectedIndex <> -1 Then
+            Dim cantidad As Integer = Val(lbCantidad.SelectedItem.ToString)
+            Dim prod As Producto
+            Dim linea As LineaFactura
+            prod = acceso.buscarProducto(lbCodProd.SelectedItem.ToString.Trim)
+            linea = New LineaFactura(prod)
+            'En función de la cantidad seleccionada, itero hasta borrar todas las líneas de ese producto
+            For i = 0 To cantidad - 1
+                factura.quitarLinea(linea)
+            Next
+
+            actualizarListsFactura()
+        End If
     End Sub
+
+
 
     Public Sub eliminarFactura()
         If MsgBox("Esta acción borrará la factura, ¿está seguro de ello?", 36, "Borrar factura") = 6 Then
@@ -211,7 +250,7 @@ Public Class Facturas
     'BOTON QUITAR LÍNEA
     Private Sub btnQuitarLinea_Click(sender As Object, e As EventArgs) Handles btnQuitarLinea.Click
         If lbCodProd.SelectedIndex <> -1 Then
-            Dim prod As Producto = acceso.buscarProducto(lbCodProd.SelectedItem.ToString.Trim)
+            Dim prod As Producto = buscarProducto(lbCodProd.SelectedItem.ToString.Trim)
             Dim linea As New LineaFactura(prod)
             factura.quitarLinea(linea)
             actualizarListsFactura()
@@ -231,6 +270,87 @@ Public Class Facturas
         lbProducto.SelectedIndex = selectedIndex
         lbTotal.SelectedIndex = selectedIndex
 
+    End Sub
+
+
+    Private Sub printer_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles printer.PrintPage
+        'Listener para PrintDocument
+
+        Dim x As Integer = 120
+        Dim y As Integer = 120
+
+        Dim random As New Random
+
+        Dim numFactura As Integer = random.Next(10000, 99999)
+        Dim numMesa As Integer = 16
+        Dim numPersonas As Integer = 4
+
+        e.Graphics.DrawImage(My.Resources.logoTicket, x, y)
+        e.Graphics.DrawString("RESTAURANTE LUOS S.L", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, 220, y)
+        y = y + 40
+        e.Graphics.DrawString("LUOS", New Font("Arial", 22, FontStyle.Bold), Brushes.Black, 260, y)
+        y = y + 40
+        e.Graphics.DrawString("C/ ANDRES MELLADO 5", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, 200, y)
+        y = y + 25
+        e.Graphics.DrawString("28015 MADRID", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, 230, y)
+        y = y + 25
+        e.Graphics.DrawString("TELE: 915495211  915430332", New Font("Arial", 11, FontStyle.Bold), Brushes.Black, 180, y)
+        y = y + 25
+        e.Graphics.DrawString("CIF/NIF: B86860293", New Font("Arial", 11, FontStyle.Bold), Brushes.Black, 215, y)
+        y = y + 25
+
+        e.Graphics.FillRectangle(Brushes.Black, x, y, 330, 5)
+        y = y + 5
+        e.Graphics.DrawString("Fac.     " & numFactura & "  Fecha: " & Date.Now & " PM", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x, y)
+        y = y + 25
+        e.Graphics.DrawString("Mesa.           " & numMesa & "  Personas:                               " & numPersonas, New Font("Arial", 10, FontStyle.Regular), Brushes.Black, x, y)
+        y = y + 5
+        e.Graphics.DrawString("------------------------------------------------------------------", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x, y)
+        y = y + 12
+        e.Graphics.DrawString("CAN.", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x, y)
+        e.Graphics.DrawString("PRE.", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x + 50, y)
+        e.Graphics.DrawString("CONCEPTO.", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x + 100, y)
+        e.Graphics.DrawString("SUM.", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x + 290, y)
+        y = y + 6
+        e.Graphics.DrawString("------------------------------------------------------------------", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x, y)
+        y = y + 20
+
+        For i = 0 To lbCodProd.Items.Count - 1
+            e.Graphics.DrawString(lbCantidad.Items.Item(i) & " x", New Font("Arial", 11, FontStyle.Bold), Brushes.Black, x, y)
+            e.Graphics.DrawString(lbPrecio.Items.Item(i), New Font("Arial", 11, FontStyle.Bold), Brushes.Black, x + 50, y)
+
+            Dim nombre As String = lbProducto.Items.Item(i).ToString
+
+            If nombre.Count <= 30 Then
+                e.Graphics.DrawString(nombre.ToUpper, New Font("Arial", 11, FontStyle.Bold), Brushes.Black, x + 100, y)
+            Else
+
+            End If
+
+            e.Graphics.DrawString(lbTotal.Items.Item(i), New Font("Arial", 11, FontStyle.Bold), Brushes.Black, x + 290, y)
+            y = y + 20
+        Next
+
+        y = y + 10
+        e.Graphics.DrawString("------------------------------------------------------------------", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x, y)
+
+        y = y + 20
+
+        e.Graphics.DrawString("Total:", New Font("Arial", 15, FontStyle.Bold), Brushes.Black, 160, y)
+        e.Graphics.DrawString(factura.obtenerImporte & "  €", New Font("Arial", 15, FontStyle.Bold), Brushes.Black, 360, y)
+
+        y = y + 50
+        e.Graphics.DrawString("IVA INCLUIDO", New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 240, y)
+        y = y + 20
+        e.Graphics.DrawString("GRACIAS POR SU VISITA", New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 200, y)
+        y = y + 20
+        e.Graphics.DrawString("WWW.RESTAURANTELUOS.COM", New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 170, y)
+
+    End Sub
+
+    Private Sub btnVistaPrevia_Click(sender As Object, e As EventArgs) Handles btnVistaPrevia.Click
+        printPreview.Document = printer
+        printPreview.ShowDialog()
     End Sub
 
 End Class

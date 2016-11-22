@@ -22,16 +22,17 @@ Partial Class Inicio
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
         Me.menuStrip = New System.Windows.Forms.MenuStrip()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.panelBotones = New System.Windows.Forms.Panel()
         Me.btnCaja = New System.Windows.Forms.Button()
         Me.btnSesion = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
         Me.btnFacturas = New System.Windows.Forms.Button()
-        Me.SesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip.SuspendLayout()
         Me.panelBotones.SuspendLayout()
         Me.SuspendLayout()
@@ -57,6 +58,19 @@ Partial Class Inicio
         Me.GestionUsuariosToolStripMenuItem.Name = "GestionUsuariosToolStripMenuItem"
         Me.GestionUsuariosToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
         Me.GestionUsuariosToolStripMenuItem.Text = "Gestión de usuarios"
+        '
+        'SesiónToolStripMenuItem
+        '
+        Me.SesiónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesiónToolStripMenuItem})
+        Me.SesiónToolStripMenuItem.Name = "SesiónToolStripMenuItem"
+        Me.SesiónToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.SesiónToolStripMenuItem.Text = "Sesión"
+        '
+        'CerrarSesiónToolStripMenuItem
+        '
+        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar sesión"
         '
         'panelBotones
         '
@@ -118,19 +132,6 @@ Partial Class Inicio
         Me.btnFacturas.Text = "PEDIDOS"
         Me.btnFacturas.UseVisualStyleBackColor = False
         '
-        'SesiónToolStripMenuItem
-        '
-        Me.SesiónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesiónToolStripMenuItem})
-        Me.SesiónToolStripMenuItem.Name = "SesiónToolStripMenuItem"
-        Me.SesiónToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
-        Me.SesiónToolStripMenuItem.Text = "Sesión"
-        '
-        'CerrarSesiónToolStripMenuItem
-        '
-        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar sesión"
-        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -140,11 +141,13 @@ Partial Class Inicio
         Me.ClientSize = New System.Drawing.Size(1161, 641)
         Me.Controls.Add(Me.menuStrip)
         Me.Controls.Add(Me.panelBotones)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.menuStrip
         Me.MaximizeBox = False
         Me.Name = "Inicio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inicio"
         Me.menuStrip.ResumeLayout(False)
         Me.menuStrip.PerformLayout()

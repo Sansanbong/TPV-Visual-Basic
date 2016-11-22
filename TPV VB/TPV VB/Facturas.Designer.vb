@@ -56,6 +56,29 @@ Partial Class Facturas
         Me.btnCat2 = New System.Windows.Forms.Button()
         Me.lblCat1 = New System.Windows.Forms.Label()
         Me.btnCat1 = New System.Windows.Forms.Button()
+        Me.panelCalculadora = New System.Windows.Forms.Panel()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.btnCalcPasoAtras = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.btnCalcComa = New System.Windows.Forms.Button()
+        Me.btnCalc0 = New System.Windows.Forms.Button()
+        Me.btnCalc00 = New System.Windows.Forms.Button()
+        Me.btnCalcMult = New System.Windows.Forms.Button()
+        Me.btnCalc3 = New System.Windows.Forms.Button()
+        Me.btnCalc2 = New System.Windows.Forms.Button()
+        Me.btnCalc1 = New System.Windows.Forms.Button()
+        Me.btnCalcRestar = New System.Windows.Forms.Button()
+        Me.btnCalc6 = New System.Windows.Forms.Button()
+        Me.btnCalc5 = New System.Windows.Forms.Button()
+        Me.btnCalc4 = New System.Windows.Forms.Button()
+        Me.btnSumar = New System.Windows.Forms.Button()
+        Me.btnCalc9 = New System.Windows.Forms.Button()
+        Me.btnCalc8 = New System.Windows.Forms.Button()
+        Me.btnCalc7 = New System.Windows.Forms.Button()
+        Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnVistaPrevia = New System.Windows.Forms.Button()
+        Me.btnBorrarFactura = New System.Windows.Forms.Button()
         Me.lblTot = New System.Windows.Forms.Label()
         Me.lblProd = New System.Windows.Forms.Label()
         Me.lblPrecio = New System.Windows.Forms.Label()
@@ -65,11 +88,13 @@ Partial Class Facturas
         Me.lbProducto = New System.Windows.Forms.ListBox()
         Me.lbCantidad = New System.Windows.Forms.ListBox()
         Me.lbCodProd = New System.Windows.Forms.ListBox()
-        Me.lblCodProd = New System.Windows.Forms.Label()
-        Me.btnBorrarFactura = New System.Windows.Forms.Button()
         Me.btnQuitarLineas = New System.Windows.Forms.Button()
         Me.btnQuitarLinea = New System.Windows.Forms.Button()
+        Me.lblCodProd = New System.Windows.Forms.Label()
+        Me.printer = New System.Drawing.Printing.PrintDocument()
+        Me.printPreview = New System.Windows.Forms.PrintPreviewDialog()
         Me.panelCategorias.SuspendLayout()
+        Me.panelCalculadora.SuspendLayout()
         Me.SuspendLayout()
         '
         'il_Categorias
@@ -495,105 +520,303 @@ Partial Class Facturas
         Me.btnCat1.UseCompatibleTextRendering = True
         Me.btnCat1.UseVisualStyleBackColor = False
         '
-        'lblTot
+        'panelCalculadora
         '
-        Me.lblTot.AutoSize = True
-        Me.lblTot.BackColor = System.Drawing.Color.Transparent
-        Me.lblTot.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
-        Me.lblTot.Location = New System.Drawing.Point(780, 22)
-        Me.lblTot.Name = "lblTot"
-        Me.lblTot.Size = New System.Drawing.Size(44, 17)
-        Me.lblTot.TabIndex = 20
-        Me.lblTot.Text = "TOTAL"
+        Me.panelCalculadora.BackColor = System.Drawing.Color.Transparent
+        Me.panelCalculadora.Controls.Add(Me.Button14)
+        Me.panelCalculadora.Controls.Add(Me.Button15)
+        Me.panelCalculadora.Controls.Add(Me.btnCalcPasoAtras)
+        Me.panelCalculadora.Controls.Add(Me.Button5)
+        Me.panelCalculadora.Controls.Add(Me.btnCalcComa)
+        Me.panelCalculadora.Controls.Add(Me.btnCalc0)
+        Me.panelCalculadora.Controls.Add(Me.btnCalc00)
+        Me.panelCalculadora.Controls.Add(Me.btnCalcMult)
+        Me.panelCalculadora.Controls.Add(Me.btnCalc3)
+        Me.panelCalculadora.Controls.Add(Me.btnCalc2)
+        Me.panelCalculadora.Controls.Add(Me.btnCalc1)
+        Me.panelCalculadora.Controls.Add(Me.btnCalcRestar)
+        Me.panelCalculadora.Controls.Add(Me.btnCalc6)
+        Me.panelCalculadora.Controls.Add(Me.btnCalc5)
+        Me.panelCalculadora.Controls.Add(Me.btnCalc4)
+        Me.panelCalculadora.Controls.Add(Me.btnSumar)
+        Me.panelCalculadora.Controls.Add(Me.btnCalc9)
+        Me.panelCalculadora.Controls.Add(Me.btnCalc8)
+        Me.panelCalculadora.Controls.Add(Me.btnCalc7)
+        Me.panelCalculadora.Location = New System.Drawing.Point(394, 351)
+        Me.panelCalculadora.Name = "panelCalculadora"
+        Me.panelCalculadora.Size = New System.Drawing.Size(202, 232)
+        Me.panelCalculadora.TabIndex = 44
         '
-        'lblProd
+        'Button14
         '
-        Me.lblProd.AutoSize = True
-        Me.lblProd.BackColor = System.Drawing.Color.Transparent
-        Me.lblProd.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
-        Me.lblProd.Location = New System.Drawing.Point(610, 22)
-        Me.lblProd.Name = "lblProd"
-        Me.lblProd.Size = New System.Drawing.Size(73, 17)
-        Me.lblProd.TabIndex = 19
-        Me.lblProd.Text = "PRODUCTO"
+        Me.Button14.BackColor = System.Drawing.Color.GreenYellow
+        Me.Button14.BackgroundImage = Global.TPV_VB.My.Resources.Resources.send_button
+        Me.Button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button14.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.Button14.Location = New System.Drawing.Point(101, 181)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(95, 43)
+        Me.Button14.TabIndex = 61
+        Me.Button14.UseVisualStyleBackColor = False
         '
-        'lblPrecio
+        'Button15
         '
-        Me.lblPrecio.AutoSize = True
-        Me.lblPrecio.BackColor = System.Drawing.Color.Transparent
-        Me.lblPrecio.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
-        Me.lblPrecio.Location = New System.Drawing.Point(550, 22)
-        Me.lblPrecio.Name = "lblPrecio"
-        Me.lblPrecio.Size = New System.Drawing.Size(50, 17)
-        Me.lblPrecio.TabIndex = 18
-        Me.lblPrecio.Text = "PRECIO"
+        Me.Button15.BackColor = System.Drawing.Color.PeachPuff
+        Me.Button15.BackgroundImage = Global.TPV_VB.My.Resources.Resources.delete
+        Me.Button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button15.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.Button15.Location = New System.Drawing.Point(53, 181)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(47, 43)
+        Me.Button15.TabIndex = 60
+        Me.Button15.UseVisualStyleBackColor = False
         '
-        'lblCan
+        'btnCalcPasoAtras
         '
-        Me.lblCan.AutoSize = True
-        Me.lblCan.BackColor = System.Drawing.Color.Transparent
-        Me.lblCan.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
-        Me.lblCan.Location = New System.Drawing.Point(508, 22)
-        Me.lblCan.Name = "lblCan"
-        Me.lblCan.Size = New System.Drawing.Size(32, 17)
-        Me.lblCan.TabIndex = 17
-        Me.lblCan.Text = "CAN"
+        Me.btnCalcPasoAtras.BackColor = System.Drawing.Color.PeachPuff
+        Me.btnCalcPasoAtras.BackgroundImage = Global.TPV_VB.My.Resources.Resources.go_back_left_arrow
+        Me.btnCalcPasoAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalcPasoAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalcPasoAtras.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalcPasoAtras.Location = New System.Drawing.Point(5, 181)
+        Me.btnCalcPasoAtras.Name = "btnCalcPasoAtras"
+        Me.btnCalcPasoAtras.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalcPasoAtras.TabIndex = 59
+        Me.btnCalcPasoAtras.UseVisualStyleBackColor = False
         '
-        'lbTotal
+        'Button5
         '
-        Me.lbTotal.BackColor = System.Drawing.Color.AliceBlue
-        Me.lbTotal.FormattingEnabled = True
-        Me.lbTotal.Location = New System.Drawing.Point(779, 40)
-        Me.lbTotal.Name = "lbTotal"
-        Me.lbTotal.Size = New System.Drawing.Size(49, 329)
-        Me.lbTotal.TabIndex = 16
+        Me.Button5.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Button5.BackgroundImage = Global.TPV_VB.My.Resources.Resources.divide
+        Me.Button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.Button5.Location = New System.Drawing.Point(149, 137)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(47, 43)
+        Me.Button5.TabIndex = 58
+        Me.Button5.UseVisualStyleBackColor = False
         '
-        'lbPrecio
+        'btnCalcComa
         '
-        Me.lbPrecio.BackColor = System.Drawing.Color.AliceBlue
-        Me.lbPrecio.FormattingEnabled = True
-        Me.lbPrecio.Location = New System.Drawing.Point(550, 40)
-        Me.lbPrecio.Name = "lbPrecio"
-        Me.lbPrecio.Size = New System.Drawing.Size(49, 329)
-        Me.lbPrecio.TabIndex = 15
+        Me.btnCalcComa.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.btnCalcComa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalcComa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalcComa.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalcComa.Location = New System.Drawing.Point(101, 137)
+        Me.btnCalcComa.Name = "btnCalcComa"
+        Me.btnCalcComa.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalcComa.TabIndex = 57
+        Me.btnCalcComa.Text = ","
+        Me.btnCalcComa.UseVisualStyleBackColor = False
         '
-        'lbProducto
+        'btnCalc0
         '
-        Me.lbProducto.BackColor = System.Drawing.Color.AliceBlue
-        Me.lbProducto.FormattingEnabled = True
-        Me.lbProducto.Location = New System.Drawing.Point(598, 40)
-        Me.lbProducto.Name = "lbProducto"
-        Me.lbProducto.Size = New System.Drawing.Size(182, 329)
-        Me.lbProducto.TabIndex = 14
+        Me.btnCalc0.BackColor = System.Drawing.Color.White
+        Me.btnCalc0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalc0.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalc0.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalc0.Location = New System.Drawing.Point(53, 137)
+        Me.btnCalc0.Name = "btnCalc0"
+        Me.btnCalc0.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalc0.TabIndex = 56
+        Me.btnCalc0.Text = "0"
+        Me.btnCalc0.UseVisualStyleBackColor = False
         '
-        'lbCantidad
+        'btnCalc00
         '
-        Me.lbCantidad.BackColor = System.Drawing.Color.AliceBlue
-        Me.lbCantidad.FormattingEnabled = True
-        Me.lbCantidad.Location = New System.Drawing.Point(506, 40)
-        Me.lbCantidad.Name = "lbCantidad"
-        Me.lbCantidad.Size = New System.Drawing.Size(45, 329)
-        Me.lbCantidad.TabIndex = 13
+        Me.btnCalc00.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.btnCalc00.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalc00.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalc00.Font = New System.Drawing.Font("Calibri", 16.25!)
+        Me.btnCalc00.Location = New System.Drawing.Point(5, 137)
+        Me.btnCalc00.Name = "btnCalc00"
+        Me.btnCalc00.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalc00.TabIndex = 55
+        Me.btnCalc00.Text = "00"
+        Me.btnCalc00.UseVisualStyleBackColor = False
         '
-        'lbCodProd
+        'btnCalcMult
         '
-        Me.lbCodProd.BackColor = System.Drawing.Color.AliceBlue
-        Me.lbCodProd.FormattingEnabled = True
-        Me.lbCodProd.Location = New System.Drawing.Point(462, 40)
-        Me.lbCodProd.Name = "lbCodProd"
-        Me.lbCodProd.Size = New System.Drawing.Size(45, 329)
-        Me.lbCodProd.TabIndex = 21
+        Me.btnCalcMult.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.btnCalcMult.BackgroundImage = Global.TPV_VB.My.Resources.Resources.cross
+        Me.btnCalcMult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalcMult.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalcMult.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalcMult.Location = New System.Drawing.Point(149, 93)
+        Me.btnCalcMult.Name = "btnCalcMult"
+        Me.btnCalcMult.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalcMult.TabIndex = 54
+        Me.btnCalcMult.UseVisualStyleBackColor = False
         '
-        'lblCodProd
+        'btnCalc3
         '
-        Me.lblCodProd.AutoSize = True
-        Me.lblCodProd.BackColor = System.Drawing.Color.Transparent
-        Me.lblCodProd.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
-        Me.lblCodProd.Location = New System.Drawing.Point(464, 22)
-        Me.lblCodProd.Name = "lblCodProd"
-        Me.lblCodProd.Size = New System.Drawing.Size(33, 17)
-        Me.lblCodProd.TabIndex = 22
-        Me.lblCodProd.Text = "COD"
+        Me.btnCalc3.BackColor = System.Drawing.Color.White
+        Me.btnCalc3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalc3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalc3.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalc3.Location = New System.Drawing.Point(101, 93)
+        Me.btnCalc3.Name = "btnCalc3"
+        Me.btnCalc3.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalc3.TabIndex = 53
+        Me.btnCalc3.Text = "3"
+        Me.btnCalc3.UseVisualStyleBackColor = False
+        '
+        'btnCalc2
+        '
+        Me.btnCalc2.BackColor = System.Drawing.Color.White
+        Me.btnCalc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalc2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalc2.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalc2.Location = New System.Drawing.Point(53, 93)
+        Me.btnCalc2.Name = "btnCalc2"
+        Me.btnCalc2.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalc2.TabIndex = 52
+        Me.btnCalc2.Text = "2"
+        Me.btnCalc2.UseVisualStyleBackColor = False
+        '
+        'btnCalc1
+        '
+        Me.btnCalc1.BackColor = System.Drawing.Color.White
+        Me.btnCalc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalc1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalc1.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalc1.Location = New System.Drawing.Point(5, 93)
+        Me.btnCalc1.Name = "btnCalc1"
+        Me.btnCalc1.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalc1.TabIndex = 51
+        Me.btnCalc1.Text = "1"
+        Me.btnCalc1.UseVisualStyleBackColor = False
+        '
+        'btnCalcRestar
+        '
+        Me.btnCalcRestar.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.btnCalcRestar.BackgroundImage = Global.TPV_VB.My.Resources.Resources.minus
+        Me.btnCalcRestar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalcRestar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalcRestar.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalcRestar.Location = New System.Drawing.Point(149, 49)
+        Me.btnCalcRestar.Name = "btnCalcRestar"
+        Me.btnCalcRestar.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalcRestar.TabIndex = 50
+        Me.btnCalcRestar.UseVisualStyleBackColor = False
+        '
+        'btnCalc6
+        '
+        Me.btnCalc6.BackColor = System.Drawing.Color.White
+        Me.btnCalc6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalc6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalc6.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalc6.Location = New System.Drawing.Point(101, 49)
+        Me.btnCalc6.Name = "btnCalc6"
+        Me.btnCalc6.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalc6.TabIndex = 49
+        Me.btnCalc6.Text = "6"
+        Me.btnCalc6.UseVisualStyleBackColor = False
+        '
+        'btnCalc5
+        '
+        Me.btnCalc5.BackColor = System.Drawing.Color.White
+        Me.btnCalc5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalc5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalc5.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalc5.Location = New System.Drawing.Point(53, 49)
+        Me.btnCalc5.Name = "btnCalc5"
+        Me.btnCalc5.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalc5.TabIndex = 48
+        Me.btnCalc5.Text = "5"
+        Me.btnCalc5.UseVisualStyleBackColor = False
+        '
+        'btnCalc4
+        '
+        Me.btnCalc4.BackColor = System.Drawing.Color.White
+        Me.btnCalc4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalc4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalc4.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalc4.Location = New System.Drawing.Point(5, 49)
+        Me.btnCalc4.Name = "btnCalc4"
+        Me.btnCalc4.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalc4.TabIndex = 47
+        Me.btnCalc4.Text = "4"
+        Me.btnCalc4.UseVisualStyleBackColor = False
+        '
+        'btnSumar
+        '
+        Me.btnSumar.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.btnSumar.BackgroundImage = Global.TPV_VB.My.Resources.Resources.add
+        Me.btnSumar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnSumar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSumar.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnSumar.Location = New System.Drawing.Point(149, 5)
+        Me.btnSumar.Name = "btnSumar"
+        Me.btnSumar.Size = New System.Drawing.Size(47, 43)
+        Me.btnSumar.TabIndex = 46
+        Me.btnSumar.UseVisualStyleBackColor = False
+        '
+        'btnCalc9
+        '
+        Me.btnCalc9.BackColor = System.Drawing.Color.White
+        Me.btnCalc9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalc9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalc9.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalc9.Location = New System.Drawing.Point(101, 5)
+        Me.btnCalc9.Name = "btnCalc9"
+        Me.btnCalc9.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalc9.TabIndex = 45
+        Me.btnCalc9.Text = "9"
+        Me.btnCalc9.UseVisualStyleBackColor = False
+        '
+        'btnCalc8
+        '
+        Me.btnCalc8.BackColor = System.Drawing.Color.White
+        Me.btnCalc8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalc8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalc8.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalc8.Location = New System.Drawing.Point(53, 5)
+        Me.btnCalc8.Name = "btnCalc8"
+        Me.btnCalc8.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalc8.TabIndex = 44
+        Me.btnCalc8.Text = "8"
+        Me.btnCalc8.UseVisualStyleBackColor = False
+        '
+        'btnCalc7
+        '
+        Me.btnCalc7.BackColor = System.Drawing.Color.White
+        Me.btnCalc7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnCalc7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCalc7.Font = New System.Drawing.Font("Calibri", 18.25!)
+        Me.btnCalc7.Location = New System.Drawing.Point(5, 5)
+        Me.btnCalc7.Name = "btnCalc7"
+        Me.btnCalc7.Size = New System.Drawing.Size(47, 43)
+        Me.btnCalc7.TabIndex = 43
+        Me.btnCalc7.Text = "7"
+        Me.btnCalc7.UseVisualStyleBackColor = False
+        '
+        'btnImprimir
+        '
+        Me.btnImprimir.BackColor = System.Drawing.Color.AliceBlue
+        Me.btnImprimir.BackgroundImage = Global.TPV_VB.My.Resources.Resources.print
+        Me.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnImprimir.Location = New System.Drawing.Point(399, 255)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(75, 70)
+        Me.btnImprimir.TabIndex = 43
+        Me.btnImprimir.UseVisualStyleBackColor = False
+        '
+        'btnVistaPrevia
+        '
+        Me.btnVistaPrevia.BackColor = System.Drawing.Color.AliceBlue
+        Me.btnVistaPrevia.BackgroundImage = Global.TPV_VB.My.Resources.Resources.document
+        Me.btnVistaPrevia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btnVistaPrevia.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVistaPrevia.Location = New System.Drawing.Point(399, 199)
+        Me.btnVistaPrevia.Name = "btnVistaPrevia"
+        Me.btnVistaPrevia.Size = New System.Drawing.Size(75, 38)
+        Me.btnVistaPrevia.TabIndex = 42
+        Me.btnVistaPrevia.UseVisualStyleBackColor = False
         '
         'btnBorrarFactura
         '
@@ -601,11 +824,100 @@ Partial Class Facturas
         Me.btnBorrarFactura.BackgroundImage = Global.TPV_VB.My.Resources.Resources.deleteAll
         Me.btnBorrarFactura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnBorrarFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBorrarFactura.Location = New System.Drawing.Point(404, 164)
+        Me.btnBorrarFactura.Location = New System.Drawing.Point(399, 145)
         Me.btnBorrarFactura.Name = "btnBorrarFactura"
-        Me.btnBorrarFactura.Size = New System.Drawing.Size(42, 38)
-        Me.btnBorrarFactura.TabIndex = 25
+        Me.btnBorrarFactura.Size = New System.Drawing.Size(75, 38)
+        Me.btnBorrarFactura.TabIndex = 41
         Me.btnBorrarFactura.UseVisualStyleBackColor = False
+        '
+        'lblTot
+        '
+        Me.lblTot.AutoSize = True
+        Me.lblTot.BackColor = System.Drawing.Color.Transparent
+        Me.lblTot.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.lblTot.Location = New System.Drawing.Point(803, 20)
+        Me.lblTot.Name = "lblTot"
+        Me.lblTot.Size = New System.Drawing.Size(44, 17)
+        Me.lblTot.TabIndex = 36
+        Me.lblTot.Text = "TOTAL"
+        '
+        'lblProd
+        '
+        Me.lblProd.AutoSize = True
+        Me.lblProd.BackColor = System.Drawing.Color.Transparent
+        Me.lblProd.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.lblProd.Location = New System.Drawing.Point(633, 20)
+        Me.lblProd.Name = "lblProd"
+        Me.lblProd.Size = New System.Drawing.Size(73, 17)
+        Me.lblProd.TabIndex = 35
+        Me.lblProd.Text = "PRODUCTO"
+        '
+        'lblPrecio
+        '
+        Me.lblPrecio.AutoSize = True
+        Me.lblPrecio.BackColor = System.Drawing.Color.Transparent
+        Me.lblPrecio.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.lblPrecio.Location = New System.Drawing.Point(577, 20)
+        Me.lblPrecio.Name = "lblPrecio"
+        Me.lblPrecio.Size = New System.Drawing.Size(50, 17)
+        Me.lblPrecio.TabIndex = 34
+        Me.lblPrecio.Text = "PRECIO"
+        '
+        'lblCan
+        '
+        Me.lblCan.AutoSize = True
+        Me.lblCan.BackColor = System.Drawing.Color.Transparent
+        Me.lblCan.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.lblCan.Location = New System.Drawing.Point(539, 20)
+        Me.lblCan.Name = "lblCan"
+        Me.lblCan.Size = New System.Drawing.Size(32, 17)
+        Me.lblCan.TabIndex = 33
+        Me.lblCan.Text = "CAN"
+        '
+        'lbTotal
+        '
+        Me.lbTotal.BackColor = System.Drawing.Color.AliceBlue
+        Me.lbTotal.FormattingEnabled = True
+        Me.lbTotal.Location = New System.Drawing.Point(806, 38)
+        Me.lbTotal.Name = "lbTotal"
+        Me.lbTotal.Size = New System.Drawing.Size(49, 290)
+        Me.lbTotal.TabIndex = 32
+        '
+        'lbPrecio
+        '
+        Me.lbPrecio.BackColor = System.Drawing.Color.AliceBlue
+        Me.lbPrecio.FormattingEnabled = True
+        Me.lbPrecio.Location = New System.Drawing.Point(577, 38)
+        Me.lbPrecio.Name = "lbPrecio"
+        Me.lbPrecio.Size = New System.Drawing.Size(49, 290)
+        Me.lbPrecio.TabIndex = 31
+        '
+        'lbProducto
+        '
+        Me.lbProducto.BackColor = System.Drawing.Color.AliceBlue
+        Me.lbProducto.FormattingEnabled = True
+        Me.lbProducto.Location = New System.Drawing.Point(625, 38)
+        Me.lbProducto.Name = "lbProducto"
+        Me.lbProducto.Size = New System.Drawing.Size(182, 290)
+        Me.lbProducto.TabIndex = 30
+        '
+        'lbCantidad
+        '
+        Me.lbCantidad.BackColor = System.Drawing.Color.AliceBlue
+        Me.lbCantidad.FormattingEnabled = True
+        Me.lbCantidad.Location = New System.Drawing.Point(533, 38)
+        Me.lbCantidad.Name = "lbCantidad"
+        Me.lbCantidad.Size = New System.Drawing.Size(45, 290)
+        Me.lbCantidad.TabIndex = 29
+        '
+        'lbCodProd
+        '
+        Me.lbCodProd.BackColor = System.Drawing.Color.AliceBlue
+        Me.lbCodProd.FormattingEnabled = True
+        Me.lbCodProd.Location = New System.Drawing.Point(489, 38)
+        Me.lbCodProd.Name = "lbCodProd"
+        Me.lbCodProd.Size = New System.Drawing.Size(45, 290)
+        Me.lbCodProd.TabIndex = 37
         '
         'btnQuitarLineas
         '
@@ -613,10 +925,10 @@ Partial Class Facturas
         Me.btnQuitarLineas.BackgroundImage = Global.TPV_VB.My.Resources.Resources.delete
         Me.btnQuitarLineas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnQuitarLineas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnQuitarLineas.Location = New System.Drawing.Point(404, 105)
+        Me.btnQuitarLineas.Location = New System.Drawing.Point(399, 92)
         Me.btnQuitarLineas.Name = "btnQuitarLineas"
-        Me.btnQuitarLineas.Size = New System.Drawing.Size(42, 38)
-        Me.btnQuitarLineas.TabIndex = 24
+        Me.btnQuitarLineas.Size = New System.Drawing.Size(75, 38)
+        Me.btnQuitarLineas.TabIndex = 40
         Me.btnQuitarLineas.UseVisualStyleBackColor = False
         '
         'btnQuitarLinea
@@ -625,11 +937,35 @@ Partial Class Facturas
         Me.btnQuitarLinea.BackgroundImage = Global.TPV_VB.My.Resources.Resources.signo_de_negacion
         Me.btnQuitarLinea.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnQuitarLinea.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnQuitarLinea.Location = New System.Drawing.Point(404, 49)
+        Me.btnQuitarLinea.Location = New System.Drawing.Point(399, 38)
         Me.btnQuitarLinea.Name = "btnQuitarLinea"
-        Me.btnQuitarLinea.Size = New System.Drawing.Size(42, 38)
-        Me.btnQuitarLinea.TabIndex = 23
+        Me.btnQuitarLinea.Size = New System.Drawing.Size(75, 38)
+        Me.btnQuitarLinea.TabIndex = 39
         Me.btnQuitarLinea.UseVisualStyleBackColor = False
+        '
+        'lblCodProd
+        '
+        Me.lblCodProd.AutoSize = True
+        Me.lblCodProd.BackColor = System.Drawing.Color.Transparent
+        Me.lblCodProd.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.lblCodProd.Location = New System.Drawing.Point(494, 20)
+        Me.lblCodProd.Name = "lblCodProd"
+        Me.lblCodProd.Size = New System.Drawing.Size(33, 17)
+        Me.lblCodProd.TabIndex = 38
+        Me.lblCodProd.Text = "COD"
+        '
+        'printer
+        '
+        '
+        'printPreview
+        '
+        Me.printPreview.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.printPreview.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.printPreview.ClientSize = New System.Drawing.Size(400, 300)
+        Me.printPreview.Enabled = True
+        Me.printPreview.Icon = CType(resources.GetObject("printPreview.Icon"), System.Drawing.Icon)
+        Me.printPreview.Name = "printPreview"
+        Me.printPreview.Visible = False
         '
         'Facturas
         '
@@ -638,6 +974,9 @@ Partial Class Facturas
         Me.BackgroundImage = Global.TPV_VB.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(882, 612)
+        Me.Controls.Add(Me.panelCalculadora)
+        Me.Controls.Add(Me.btnImprimir)
+        Me.Controls.Add(Me.btnVistaPrevia)
         Me.Controls.Add(Me.btnBorrarFactura)
         Me.Controls.Add(Me.lblTot)
         Me.Controls.Add(Me.lblProd)
@@ -660,6 +999,7 @@ Partial Class Facturas
         Me.Text = "Facturas"
         Me.panelCategorias.ResumeLayout(False)
         Me.panelCategorias.PerformLayout()
+        Me.panelCalculadora.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -696,6 +1036,29 @@ Partial Class Facturas
     Friend WithEvents btnCat2 As System.Windows.Forms.Button
     Friend WithEvents lblCat1 As System.Windows.Forms.Label
     Friend WithEvents btnCat1 As System.Windows.Forms.Button
+    Friend WithEvents panelCalculadora As System.Windows.Forms.Panel
+    Friend WithEvents Button14 As System.Windows.Forms.Button
+    Friend WithEvents Button15 As System.Windows.Forms.Button
+    Friend WithEvents btnCalcPasoAtras As System.Windows.Forms.Button
+    Friend WithEvents Button5 As System.Windows.Forms.Button
+    Friend WithEvents btnCalcComa As System.Windows.Forms.Button
+    Friend WithEvents btnCalc0 As System.Windows.Forms.Button
+    Friend WithEvents btnCalc00 As System.Windows.Forms.Button
+    Friend WithEvents btnCalcMult As System.Windows.Forms.Button
+    Friend WithEvents btnCalc3 As System.Windows.Forms.Button
+    Friend WithEvents btnCalc2 As System.Windows.Forms.Button
+    Friend WithEvents btnCalc1 As System.Windows.Forms.Button
+    Friend WithEvents btnCalcRestar As System.Windows.Forms.Button
+    Friend WithEvents btnCalc6 As System.Windows.Forms.Button
+    Friend WithEvents btnCalc5 As System.Windows.Forms.Button
+    Friend WithEvents btnCalc4 As System.Windows.Forms.Button
+    Friend WithEvents btnSumar As System.Windows.Forms.Button
+    Friend WithEvents btnCalc9 As System.Windows.Forms.Button
+    Friend WithEvents btnCalc8 As System.Windows.Forms.Button
+    Friend WithEvents btnCalc7 As System.Windows.Forms.Button
+    Friend WithEvents btnImprimir As System.Windows.Forms.Button
+    Friend WithEvents btnVistaPrevia As System.Windows.Forms.Button
+    Friend WithEvents btnBorrarFactura As System.Windows.Forms.Button
     Friend WithEvents lblTot As System.Windows.Forms.Label
     Friend WithEvents lblProd As System.Windows.Forms.Label
     Friend WithEvents lblPrecio As System.Windows.Forms.Label
@@ -708,5 +1071,6 @@ Partial Class Facturas
     Friend WithEvents btnQuitarLineas As System.Windows.Forms.Button
     Friend WithEvents btnQuitarLinea As System.Windows.Forms.Button
     Friend WithEvents lblCodProd As System.Windows.Forms.Label
-    Friend WithEvents btnBorrarFactura As System.Windows.Forms.Button
+    Friend WithEvents printer As System.Drawing.Printing.PrintDocument
+    Friend WithEvents printPreview As System.Windows.Forms.PrintPreviewDialog
 End Class

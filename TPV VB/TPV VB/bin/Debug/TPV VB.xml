@@ -15,6 +15,10 @@ TPVVB
   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
+</member><member name="P:TPV_VB.My.Resources.Resources.add">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:TPV_VB.My.Resources.Resources.bamboo">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -23,11 +27,11 @@ TPVVB
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
-</member><member name="P:TPV_VB.My.Resources.Resources.delete">
+</member><member name="P:TPV_VB.My.Resources.Resources.cross">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
-</member><member name="P:TPV_VB.My.Resources.Resources.delete1">
+</member><member name="P:TPV_VB.My.Resources.Resources.delete">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -35,7 +39,11 @@ TPVVB
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
-</member><member name="P:TPV_VB.My.Resources.Resources.deleteAll1">
+</member><member name="P:TPV_VB.My.Resources.Resources.divide">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:TPV_VB.My.Resources.Resources.document">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -47,11 +55,23 @@ TPVVB
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:TPV_VB.My.Resources.Resources.go_back_left_arrow">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:TPV_VB.My.Resources.Resources.helecho">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member><member name="P:TPV_VB.My.Resources.Resources.logo">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:TPV_VB.My.Resources.Resources.logoTicket">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:TPV_VB.My.Resources.Resources.minus">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
@@ -63,15 +83,19 @@ TPVVB
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
+</member><member name="P:TPV_VB.My.Resources.Resources.print">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:TPV_VB.My.Resources.Resources.refrescar">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
-</member><member name="P:TPV_VB.My.Resources.Resources.signo_de_negacion">
+</member><member name="P:TPV_VB.My.Resources.Resources.send_button">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
-</member><member name="P:TPV_VB.My.Resources.Resources.signo_de_negacion1">
+</member><member name="P:TPV_VB.My.Resources.Resources.signo_de_negacion">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>

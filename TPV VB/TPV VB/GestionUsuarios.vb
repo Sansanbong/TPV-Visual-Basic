@@ -8,6 +8,7 @@ Public Class GestionUsuarios
     Private usuario As Usuario
     Private usuarios As List(Of Usuario)
     Private validator As Validator
+
     Sub New(ByRef usuario As Usuario)
         InitializeComponent()
 
@@ -159,4 +160,5 @@ Public Class GestionUsuarios
         usuario.setNombre(estructura.nick.Trim)
         Return usuario
     End Function
+
 End Class

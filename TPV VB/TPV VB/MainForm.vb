@@ -1,6 +1,8 @@
 ﻿Imports Biblioteca_TPV.negocio
 Public Class Inicio
+
     Public usuario As Usuario
+
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim form As New Login(Me)
         form.MdiParent = Me
