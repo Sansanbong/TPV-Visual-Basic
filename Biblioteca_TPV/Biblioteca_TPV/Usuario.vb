@@ -45,7 +45,14 @@
         End Sub
 
         Sub New(ByVal estructuraUsuario As Usuario.stUsuario)
-            Me.datos = estructuraUsuario
+            Me.datos.dni = estructuraUsuario.dni.Trim
+            Me.datos.apellidos = estructuraUsuario.apellidos.Trim
+            Me.datos.contrasenya = estructuraUsuario.contrasenya.Trim
+            Me.datos.correo = estructuraUsuario.correo.Trim
+            Me.datos.nick = estructuraUsuario.nick.Trim
+            Me.datos.nombreEmpleado = estructuraUsuario.nombreEmpleado.Trim
+            Me.datos.rol = estructuraUsuario.rol
+            Me.datos.telefono = estructuraUsuario.telefono
         End Sub
         Sub New(ByVal nombre As String)
             Me.datos.nick = nombre
@@ -55,15 +62,15 @@
             Me.datos.nick = nick
             Me.datos.contrasenya = contrasenya
         End Sub
-        Sub New(ByVal nombre As String, ByVal contrasenya As String, ByVal rol As Integer, ByVal nombreEmpleado As String, ByVal apellidos As String, ByVal dni As String, ByVal telefono As Long, ByVal correo As String)
-            Me.datos.nick = nombre
-            Me.datos.contrasenya = contrasenya
+        Sub New(ByVal nick As String, ByVal contrasenya As String, ByVal rol As Integer, ByVal nombreEmpleado As String, ByVal apellidos As String, ByVal dni As String, ByVal telefono As Long, ByVal correo As String)
+            Me.datos.nick = nick.Trim
+            Me.datos.contrasenya = contrasenya.Trim
             Me.datos.rol = rol
-            Me.datos.nombreEmpleado = nombreEmpleado
-            Me.datos.apellidos = apellidos
-            Me.datos.dni = dni
+            Me.datos.nombreEmpleado = nombreEmpleado.Trim
+            Me.datos.apellidos = apellidos.Trim
+            Me.datos.dni = dni.Trim
             Me.datos.telefono = telefono
-            Me.datos.correo = correo
+            Me.datos.correo = correo.Trim
         End Sub
 
         'Función que devuelve el usuario resultado de
@@ -87,6 +94,7 @@
 
         Function modificarPass(ByVal newPass As String) As Integer
             Dim acceso As New ficheros.AccesoFicheros
+
             Return acceso.modificarPass(Me, newPass)
         End Function
         'Método getter del atributo datos

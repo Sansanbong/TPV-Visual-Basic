@@ -56,3 +56,14 @@ C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Bibl
 C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.dll
 C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.xml
 C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.pdb
+K:\DAM\DI\Trabajo TPV\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.dll
+K:\DAM\DI\Trabajo TPV\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.pdb
+K:\DAM\DI\Trabajo TPV\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.xml
+K:\DAM\DI\Trabajo TPV\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.pdb
+K:\DAM\DI\Trabajo TPV\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.xml
+K:\DAM\DI\Trabajo TPV\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.vbprojResolveAssemblyReference.cache
+K:\DAM\DI\Trabajo TPV\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.Resources.resources
+K:\DAM\DI\Trabajo TPV\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.vbproj.GenerateResource.Cache
+K:\DAM\DI\Trabajo TPV\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.dll
+K:\DAM\DI\Trabajo TPV\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.xml
+K:\DAM\DI\Trabajo TPV\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.pdb
