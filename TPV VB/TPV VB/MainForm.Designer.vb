@@ -23,21 +23,40 @@ Partial Class Inicio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.menuStrip = New System.Windows.Forms.MenuStrip()
+        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestionUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.panelBotones = New System.Windows.Forms.Panel()
         Me.btnCaja = New System.Windows.Forms.Button()
         Me.btnSesion = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
         Me.btnFacturas = New System.Windows.Forms.Button()
+        Me.SesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menuStrip.SuspendLayout()
         Me.panelBotones.SuspendLayout()
         Me.SuspendLayout()
         '
         'menuStrip
         '
+        Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.SesiónToolStripMenuItem})
         Me.menuStrip.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip.Name = "menuStrip"
         Me.menuStrip.Size = New System.Drawing.Size(1161, 24)
         Me.menuStrip.TabIndex = 8
         Me.menuStrip.Text = "MenuStrip1"
+        '
+        'UsuariosToolStripMenuItem
+        '
+        Me.UsuariosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionUsuariosToolStripMenuItem})
+        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(64, 20)
+        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
+        '
+        'GestionUsuariosToolStripMenuItem
+        '
+        Me.GestionUsuariosToolStripMenuItem.Name = "GestionUsuariosToolStripMenuItem"
+        Me.GestionUsuariosToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.GestionUsuariosToolStripMenuItem.Text = "Gestión de usuarios"
         '
         'panelBotones
         '
@@ -99,6 +118,19 @@ Partial Class Inicio
         Me.btnFacturas.Text = "PEDIDOS"
         Me.btnFacturas.UseVisualStyleBackColor = False
         '
+        'SesiónToolStripMenuItem
+        '
+        Me.SesiónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CerrarSesiónToolStripMenuItem})
+        Me.SesiónToolStripMenuItem.Name = "SesiónToolStripMenuItem"
+        Me.SesiónToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.SesiónToolStripMenuItem.Text = "Sesión"
+        '
+        'CerrarSesiónToolStripMenuItem
+        '
+        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar sesión"
+        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -114,6 +146,8 @@ Partial Class Inicio
         Me.MaximizeBox = False
         Me.Name = "Inicio"
         Me.Text = "Inicio"
+        Me.menuStrip.ResumeLayout(False)
+        Me.menuStrip.PerformLayout()
         Me.panelBotones.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -125,5 +159,9 @@ Partial Class Inicio
     Friend WithEvents btnSesion As System.Windows.Forms.Button
     Friend WithEvents btnProductos As System.Windows.Forms.Button
     Friend WithEvents btnFacturas As System.Windows.Forms.Button
+    Friend WithEvents UsuariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GestionUsuariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SesiónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CerrarSesiónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
