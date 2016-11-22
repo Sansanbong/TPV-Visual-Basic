@@ -1,0 +1,58 @@
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.dll
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.pdb
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.xml
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.Resources.resources
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.vbproj.GenerateResource.Cache
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.dll
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.xml
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.pdb
+C:\Users\Yo\Desktop\Proyecto_VB_TPV-master\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.dll
+C:\Users\Yo\Desktop\Proyecto_VB_TPV-master\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.pdb
+C:\Users\Yo\Desktop\Proyecto_VB_TPV-master\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.xml
+C:\Users\Yo\Desktop\Proyecto_VB_TPV-master\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.Resources.resources
+C:\Users\Yo\Desktop\Proyecto_VB_TPV-master\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.vbproj.GenerateResource.Cache
+C:\Users\Yo\Desktop\Proyecto_VB_TPV-master\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.dll
+C:\Users\Yo\Desktop\Proyecto_VB_TPV-master\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.xml
+C:\Users\Yo\Desktop\Proyecto_VB_TPV-master\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.pdb
+C:\Users\Yo\Desktop\Proyecto_VB_TPV-master\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.dll.CodeAnalysisLog.xml
+C:\Users\Yo\Desktop\Proyecto_VB_TPV-master\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.dll.lastcodeanalysissucceeded
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.dll
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.pdb
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.xml
+H:\Software\Visual Studio Proyects\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.vbprojResolveAssemblyReference.cache
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.dll
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.pdb
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.xml
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.dll
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.pdb
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.xml
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.vbprojResolveAssemblyReference.cache
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.Resources.resources
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.vbproj.GenerateResource.Cache
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.dll
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.xml
+C:\Users\Yo\Desktop\TPV-Visual-Basic-master\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.pdb
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.dll
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.pdb
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.xml
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.dll
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.pdb
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.xml
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.vbprojResolveAssemblyReference.cache
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.Resources.resources
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.vbproj.GenerateResource.Cache
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.dll
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.xml
+C:\Users\Yo\Desktop\TPV para subir al GIT\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.pdb
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.dll
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.pdb
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Biblioteca_TPV.xml
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.dll
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.pdb
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\bin\Debug\Utiles.xml
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.vbprojResolveAssemblyReference.cache
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.Resources.resources
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.vbproj.GenerateResource.Cache
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.dll
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.xml
+C:\Users\DAM212\Desktop\Proyecto VB\Biblioteca_TPV\Biblioteca_TPV\obj\Debug\Biblioteca_TPV.pdb
