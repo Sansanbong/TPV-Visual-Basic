@@ -255,6 +255,31 @@ Namespace ficheros
 
         End Function
 
+        Public Sub crearFicheroUsuarios()
+            Dim estructura As New Usuario.stUsuario
+
+
+            If Not My.Computer.FileSystem.FileExists(PATH_USUARIOS) Then
+
+                estructura.nick = "admin"
+                estructura.contrasenya = "admin"
+                estructura.dni = "53848813V"
+                estructura.nombreEmpleado = "Mario Javier"
+                estructura.rol = 1
+                estructura.telefono = 691582472
+                estructura.apellidos = "Sánchez Ramos"
+                estructura.correo = "soyeladminytuno@jeje.com"
+
+
+                FileOpen(FICH_USUARIOS, PATH_USUARIOS, OpenMode.Random, OpenAccess.Write, , Len(estructura))
+
+                FilePut(FICH_USUARIOS, estructura, 1)
+                FileClose(FICH_USUARIOS)
+            End If
+
+
+        End Sub
+
 
         '--------------GESTIÓN PRODUCTOS---------------
         'Lectura de todos los productos
