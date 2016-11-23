@@ -74,8 +74,6 @@ Public Class Sesion
             mainForm.usuario = New Usuario
             mainForm.formLogin.Show()
             Dispose()
-
-
         End If
     End Sub
 End Class

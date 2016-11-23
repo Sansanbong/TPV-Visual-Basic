@@ -16,6 +16,9 @@ Public Class Facturas
 
         btnVistaPrevia.Enabled = False
         btnImprimir.Enabled = False
+        'panelCalculadora.Enabled = False
+        lbCalcTop.Text = ""
+        lbCalcBot.Text = "0,00"
 
     End Sub
 
@@ -33,7 +36,40 @@ Public Class Facturas
         Return Nothing
     End Function
 
-    '--------------------------FACTURAS----------------------------------
+    'Función privada que convierte un valor de tipo Single a un String con formato de dos decimales.
+    Private Function parsearSingle(ByVal valor As Single) As String
+        Dim cadena As String = ""
+        cadena = Math.Round(valor, 2)
+
+        Dim tokens() As String = cadena.Split(",")
+        Try
+            If tokens(1).Count = 1 Then
+                cadena = cadena + "0"
+            End If
+        Catch ex As IndexOutOfRangeException
+            cadena = cadena + ",00"
+        End Try
+
+        Return cadena
+    End Function
+
+    'Lee los productos de una categoría
+    Private Function leerProductosCategoria(categoria As String) As ArrayList
+        Dim prodsCat As New ArrayList
+        Dim producto As Producto
+        For i = 0 To productos.Count - 1
+            producto = CType(productos.Item(i), Producto)
+            If (producto.getStructure.categoria = categoria) Then
+                prodsCat.Add(producto)
+            End If
+        Next
+
+        Return prodsCat
+    End Function
+
+    '-------------------------- PANELES DE CATEGORÍA Y PRODUCTOS ----------------------------------
+    '----------------------------------------------------------------------------------------------
+    '----------------------------------------------------------------------------------------------
 
     'Listener para los botones de las categorías
     Private Sub botonesCat_Click(sender As Object, e As EventArgs) Handles btnCat1.Click, btnCat2.Click,
@@ -97,6 +133,8 @@ Public Class Facturas
             .BorderStyle = BorderStyle.FixedSingle
         End With
 
+        AddHandler panelBtnProductos.Click, AddressOf Facturas_Click
+
         'Generación de botones
         For i = 0 To prodsCat.Count - 1
             producto = CType(prodsCat.Item(i), Producto)
@@ -112,6 +150,7 @@ Public Class Facturas
                 .BackColor = Color.LightCyan
             End With
 
+            ttProductos.SetToolTip(boton, producto.getStructure.nombre)
             AddHandler boton.Click, AddressOf btnProducto_Click
             panelBtnProductos.Controls.Add(boton)
 
@@ -166,10 +205,25 @@ Public Class Facturas
         actualizarListsFactura()
     End Sub
 
+    '------------------------------- LISTAS CAJA -----------------------------------
+    '-------------------------------------------------------------------------------
+    '-------------------------------------------------------------------------------
+
+    'Limpia la selección de los lists box al hacer click en otra parte
+    Private Sub Facturas_Click(sender As Object, e As EventArgs) Handles Me.Click
+        lbCodProd.SelectedIndex = -1
+        lbPrecio.SelectedIndex = -1
+        lbTotal.SelectedIndex = -1
+        lbProducto.SelectedIndex = -1
+        lbCantidad.SelectedIndex = -1
+    End Sub
+
     'Actualiza la lista de líneas
     Private Sub actualizarListsFactura()
         limpiarListas()
         Dim linea As LineaFactura
+        Dim precio As String = ""
+        Dim total As String = ""
 
         For i = 0 To factura.getLineasPedido.Count - 1
             linea = factura.getLineasPedido.Item(i)
@@ -177,8 +231,9 @@ Public Class Facturas
             lbCantidad.Items.Add(linea.getCantidad)
             lbPrecio.Items.Add(linea.getProducto.getStructure.precio)
             lbProducto.Items.Add(linea.getProducto.getStructure.nombre)
-            Dim total As Single = linea.getProducto.getStructure.precio * linea.getCantidad
+            total = linea.getProducto.getStructure.precio * linea.getCantidad
             lbTotal.Items.Add(total)
+
         Next
 
         If factura.getLineasPedido.Count <> 0 Then
@@ -200,21 +255,6 @@ Public Class Facturas
         lbTotal.Items.Clear()
     End Sub
 
-
-    'Lee los productos de una categoría
-    Private Function leerProductosCategoria(categoria As String) As ArrayList
-        Dim prodsCat As New ArrayList
-        Dim producto As Producto
-        For i = 0 To productos.Count - 1
-            producto = CType(productos.Item(i), Producto)
-            If (producto.getStructure.categoria = categoria) Then
-                prodsCat.Add(producto)
-            End If
-        Next
-
-        Return prodsCat
-    End Function
-
     'BOTÓN ELIMINAR FACTURA
     Private Sub btnBorrarFactura_Click(sender As Object, e As EventArgs) Handles btnBorrarFactura.Click
         eliminarFactura()
@@ -222,23 +262,8 @@ Public Class Facturas
 
     'BOTÓN BORRAR CONJUNTO DE LÍNEAS
     Private Sub btnLimpiarLista_Click(sender As Object, e As EventArgs) Handles btnQuitarLineas.Click
-
-        If lbCodProd.SelectedIndex <> -1 Then
-            Dim cantidad As Integer = Val(lbCantidad.SelectedItem.ToString)
-            Dim prod As Producto
-            Dim linea As LineaFactura
-            prod = acceso.buscarProducto(lbCodProd.SelectedItem.ToString.Trim)
-            linea = New LineaFactura(prod)
-            'En función de la cantidad seleccionada, itero hasta borrar todas las líneas de ese producto
-            For i = 0 To cantidad - 1
-                factura.quitarLinea(linea)
-            Next
-
-            actualizarListsFactura()
-        End If
+        borrarConjuntoLineas()
     End Sub
-
-
 
     Public Sub eliminarFactura()
         If MsgBox("Esta acción borrará la factura, ¿está seguro de ello?", 36, "Borrar factura") = 6 Then
@@ -249,10 +274,47 @@ Public Class Facturas
 
     'BOTON QUITAR LÍNEA
     Private Sub btnQuitarLinea_Click(sender As Object, e As EventArgs) Handles btnQuitarLinea.Click
+
         If lbCodProd.SelectedIndex <> -1 Then
+            Dim index As Integer = lbCodProd.SelectedIndex
             Dim prod As Producto = buscarProducto(lbCodProd.SelectedItem.ToString.Trim)
             Dim linea As New LineaFactura(prod)
             factura.quitarLinea(linea)
+            actualizarListsFactura()
+
+            Try
+                lbCodProd.SelectedIndex = index
+            Catch ex As Exception
+                lbCodProd.SelectedIndex = index - 1
+            End Try
+
+        End If
+    End Sub
+
+    'LISTENER PARA BORRAR LÍNEAS CUANDO PULSAS SUPRIMIR
+    Private Sub list_KeyDown(sender As Object, e As KeyEventArgs) Handles lbCodProd.KeyDown, lbPrecio.KeyDown,
+        lbCantidad.KeyDown, lbTotal.KeyDown, lbProducto.KeyDown
+        If lbCodProd.SelectedIndex <> -1 Then
+            If e.KeyValue = Keys.Delete Then
+                borrarConjuntoLineas()
+            End If
+        End If
+    End Sub
+
+    'MÉTODO QUE BORRA UN CONJUNTO DE LÍNEAS
+    Private Sub borrarConjuntoLineas()
+        If lbCodProd.SelectedIndex <> -1 Then
+            Dim index As Integer = lbCodProd.SelectedIndex
+            Dim cantidad As Integer = Val(lbCantidad.SelectedItem.ToString)
+            Dim prod As Producto
+            Dim linea As LineaFactura
+            prod = buscarProducto(lbCodProd.SelectedItem.ToString.Trim)
+            linea = New LineaFactura(prod)
+            'En función de la cantidad seleccionada, itero hasta borrar todas las líneas de ese producto
+            For i = 0 To cantidad - 1
+                factura.quitarLinea(linea)
+            Next
+
             actualizarListsFactura()
         End If
     End Sub
@@ -271,6 +333,10 @@ Public Class Facturas
         lbTotal.SelectedIndex = selectedIndex
 
     End Sub
+
+    '------------------------------------- IMPRESIÓN ----------------------------------------------
+    '----------------------------------------------------------------------------------------------
+    '----------------------------------------------------------------------------------------------
 
 
     Private Sub printer_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles printer.PrintPage
@@ -301,9 +367,9 @@ Public Class Facturas
 
         e.Graphics.FillRectangle(Brushes.Black, x, y, 330, 5)
         y = y + 5
-        e.Graphics.DrawString("Fac.     " & numFactura & "  Fecha: " & Date.Now & " PM", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x, y)
+        e.Graphics.DrawString("Fac.     " & numFactura & "  Fecha:    " & Date.Now, New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x, y)
         y = y + 25
-        e.Graphics.DrawString("Mesa.           " & numMesa & "  Personas:                               " & numPersonas, New Font("Arial", 10, FontStyle.Regular), Brushes.Black, x, y)
+        e.Graphics.DrawString("Mesa.           " & numMesa & "  Personas:                                   " & numPersonas, New Font("Arial", 10, FontStyle.Regular), Brushes.Black, x, y)
         y = y + 5
         e.Graphics.DrawString("------------------------------------------------------------------", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x, y)
         y = y + 12
@@ -315,19 +381,29 @@ Public Class Facturas
         e.Graphics.DrawString("------------------------------------------------------------------", New Font("Arial", 11, FontStyle.Regular), Brushes.Black, x, y)
         y = y + 20
 
+        'IMPRESIÓN LÍNEAS
         For i = 0 To lbCodProd.Items.Count - 1
+
             e.Graphics.DrawString(lbCantidad.Items.Item(i) & " x", New Font("Arial", 11, FontStyle.Bold), Brushes.Black, x, y)
-            e.Graphics.DrawString(lbPrecio.Items.Item(i), New Font("Arial", 11, FontStyle.Bold), Brushes.Black, x + 50, y)
 
-            Dim nombre As String = lbProducto.Items.Item(i).ToString
+            Dim precio As String = parsearSingle(CSng(lbPrecio.Items.Item(i)))
+            e.Graphics.DrawString(precio, New Font("Arial", 11, FontStyle.Bold), Brushes.Black, x + 50, y)
 
-            If nombre.Count <= 30 Then
+            Dim nombre As String = lbProducto.Items.Item(i).ToString.Trim
+
+            If nombre.Count <= 16 Then
                 e.Graphics.DrawString(nombre.ToUpper, New Font("Arial", 11, FontStyle.Bold), Brushes.Black, x + 100, y)
             Else
-
+                Dim aux As String = ""
+                For j = 0 To 15
+                    aux = aux + nombre(j)
+                Next
+                aux = aux + "..."
+                e.Graphics.DrawString(aux.ToUpper, New Font("Arial", 11, FontStyle.Bold), Brushes.Black, x + 100, y)
             End If
 
-            e.Graphics.DrawString(lbTotal.Items.Item(i), New Font("Arial", 11, FontStyle.Bold), Brushes.Black, x + 290, y)
+            Dim precioTotal As String = parsearSingle(CSng(lbTotal.Items.Item(i)))
+            e.Graphics.DrawString(precioTotal, New Font("Arial", 11, FontStyle.Bold), Brushes.Black, x + 290, y)
             y = y + 20
         Next
 
@@ -337,7 +413,8 @@ Public Class Facturas
         y = y + 20
 
         e.Graphics.DrawString("Total:", New Font("Arial", 15, FontStyle.Bold), Brushes.Black, 160, y)
-        e.Graphics.DrawString(factura.obtenerImporte & "  €", New Font("Arial", 15, FontStyle.Bold), Brushes.Black, 360, y)
+        Dim totalFinal As String = parsearSingle(factura.obtenerImporte)
+        e.Graphics.DrawString(totalFinal & "  €", New Font("Arial", 15, FontStyle.Bold), Brushes.Black, 360, y)
 
         y = y + 50
         e.Graphics.DrawString("IVA INCLUIDO", New Font("Arial", 10, FontStyle.Regular), Brushes.Black, 240, y)
@@ -351,6 +428,163 @@ Public Class Facturas
     Private Sub btnVistaPrevia_Click(sender As Object, e As EventArgs) Handles btnVistaPrevia.Click
         printPreview.Document = printer
         printPreview.ShowDialog()
+    End Sub
+
+    Private Sub btnImprimir_Click(sender As Object, e As EventArgs) Handles btnImprimir.Click
+        printer.Print()
+    End Sub
+
+
+    '------------------------------- CALCULADORA ---------------------------------------------------
+    '------------------------------- ----------- ---------------------------------------------------
+    '------------------------------- ----------- ---------------------------------------------------
+
+    'Listener de botones numéricos de la calculadora
+    Private Sub btnCalc0_Click(sender As Object, e As EventArgs) Handles btnCalc0.Click, btnCalc1.Click,
+        btnCalc2.Click, btnCalc3.Click, btnCalc4.Click, btnCalc5.Click, btnCalc6.Click, btnCalc7.Click,
+        btnCalc8.Click, btnCalc9.Click, btnCalcComa.Click, btnCalc00.Click
+
+        Dim botonPulsado As Button = CType(sender, Button)
+        pulsarNumCalculadora(botonPulsado.Text)
+    End Sub
+
+    'Según el nº pulsado escribe en el label de arriba
+    Private Sub pulsarNumCalculadora(ByVal num As String)
+        If (lbCalcTop.Text.Count <= 6) Then
+            lbCalcTop.Text = lbCalcTop.Text & num
+
+            If num = "," Then
+                btnCalcComa.Enabled = False
+            End If
+        End If
+    End Sub
+
+    'Listener para los botones no numéricos de la calculadora
+    Private Sub btnSumar_Click(sender As Object, e As EventArgs) Handles btnSumar.Click, btnCalcRestar.Click,
+        btnCalcDiv.Click, btnCalcMult.Click, btnVerde.Click, btnLimpiar.Click, btnCalcPasoAtras.Click
+        Dim boton As Button = CType(sender, Button)
+        If (lbCalcTop.Text <> "" And lbCalcTop.Text <> ",") Then
+
+            Select Case boton.Name
+
+                Case "btnVerde"
+                    botonVerde()
+                Case "btnSumar"
+                    sumar()
+                Case "btnCalcRestar"
+                    restar()
+                Case "btnCalcMult"
+                    multiplicar()
+                Case "btnCalcDiv"
+                    dividir()
+            End Select
+
+            If boton.Name = "btnCalcPasoAtras" Then
+                pasoAtras()
+            Else
+                btnCalcComa.Enabled = True
+                lbCalcTop.Text = ""
+            End If
+        End If
+
+        If boton.Name = "btnLimpiar" Then
+            limpiarCalculadora()
+        End If
+
+    End Sub
+
+    'Paso atrás, borra el último caracter
+    Public Sub pasoAtras()
+        Dim aux As String = ""
+        For i = 0 To lbCalcTop.Text.Count - 2
+            aux = aux + lbCalcTop.Text(i)
+        Next
+
+        lbCalcTop.Text = aux
+        If Not lbCalcTop.Text.Contains(",") Then
+            btnCalcComa.Enabled = True
+        End If
+    End Sub
+
+    'Borra todo el label
+    Private Sub limpiarCalculadora()
+        btnCalcComa.Enabled = True
+        lbCalcTop.Text = ""
+        lbCalcBot.Text = "0,00"
+    End Sub
+
+    Private Sub botonVerde()
+        If lbCodProd.SelectedIndex <> -1 Then
+            Dim producto As Producto = buscarProducto(lbCodProd.SelectedItem)
+            Dim linea As New LineaFactura(producto)
+
+            For i = 0 To Val(lbCantidad.Text) - 1
+                factura.quitarLinea(linea)
+            Next
+
+            For i = 0 To Val(lbCalcTop.Text) - 1
+                factura.addLinea(linea)
+            Next
+
+            actualizarListsFactura()
+        Else
+            lbCalcBot.Text = parsearSingle(CSng(lbCalcTop.Text))
+        End If
+        lbCalcTop.Text = ""
+    End Sub
+
+    Public Sub sumar()
+        Dim res As Single = CSng(lbCalcBot.Text) + CSng(lbCalcTop.Text)
+        If (res < 10000) Then
+            lbCalcBot.Text = parsearSingle(res)
+        Else
+            limpiarCalculadora()
+            lbError.Text = "(*) Ese número es demasiado grande para mí"
+            lbError.Visible = True
+            timerFactura.Start()
+        End If
+    End Sub
+
+    Public Sub restar()
+        Dim res As Single = CSng(lbCalcBot.Text) - CSng(lbCalcTop.Text)
+        If (res > -10000) Then
+            lbCalcBot.Text = parsearSingle(res)
+        Else
+            limpiarCalculadora()
+            lbError.Text = "(*) Ese número es demasiado grande para mí"
+            lbError.Visible = True
+            timerFactura.Start()
+        End If
+    End Sub
+
+    Public Sub multiplicar()
+        Dim res As Single = CSng(lbCalcBot.Text) * CSng(lbCalcTop.Text)
+        If (res < 10000 And res > -10000) Then
+            lbCalcBot.Text = parsearSingle(res)
+        Else
+            limpiarCalculadora()
+            lbError.Text = "(*) Ese número es demasiado grande para mí"
+            lbError.Visible = True
+            timerFactura.Start()
+        End If
+
+    End Sub
+
+    Public Sub dividir()
+        If CSng(lbCalcTop.Text) <> 0 Then
+            lbCalcBot.Text = parsearSingle(CSng(lbCalcBot.Text) / CSng(lbCalcTop.Text))
+        Else
+            limpiarCalculadora()
+            lbError.Text = "(*) No es recomendable intentar dividir por 0"
+            lbError.Visible = True
+            timerFactura.Start()
+        End If
+
+    End Sub
+
+    Private Sub timerFactura_Tick(sender As Object, e As EventArgs) Handles timerFactura.Tick
+        lbError.Visible = False
+        timerFactura.Stop()
     End Sub
 
 End Class
