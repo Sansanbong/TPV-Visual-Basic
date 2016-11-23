@@ -20,6 +20,7 @@ Public Class GestionUsuarios
 
         Me.Location = New Point(275, 0)
         cargarUsuarios()
+        txtNombreUsuario.Focus()
 
     End Sub
 
