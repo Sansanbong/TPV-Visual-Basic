@@ -20,10 +20,10 @@ Public Class Login
 
     Private Sub btnAcceder_Click(sender As Object, e As EventArgs) Handles btnAcceder.Click
 
-        usuario = acceso.login(New Usuario(txtUsuario.Text.Trim, txtContrasenya.Text.Trim))
+        usuario = New Usuario(txtUsuario.Text.Trim, txtContrasenya.Text.Trim).iniciarSesion
 
         If usuario IsNot Nothing Then
-            Dim form As New Sesion(usuario)
+
             MsgBox("¡Bienvenido!")
             mainForm.usuario = usuario
 
@@ -32,9 +32,9 @@ Public Class Login
             mainForm.btnSesion.Enabled = True
             mainForm.btnCaja.Enabled = True
 
-
-            Form.MdiParent = mainForm
-            Form.Show()
+            mainForm.formSesion = New Sesion(mainForm)
+            mainForm.formSesion.MdiParent = mainForm
+            mainForm.formSesion.Show()
 
             If usuario.getDatos.rol = 1 Then
 
@@ -49,7 +49,7 @@ Public Class Login
             ' cargarInfoUsuario()
 
 
-            Dispose()
+            Hide()
         Else
             MsgBox("Nombre de usuario o contraseña incorrectos.")
         End If
@@ -58,4 +58,8 @@ Public Class Login
     Function getUsuarioLoggeado() As Usuario
         Return usuario
     End Function
+
+    Private Sub Login_VisibleChanged(sender As Object, e As EventArgs) Handles Me.VisibleChanged
+        Me.Location = New Point(275, 0)
+    End Sub
 End Class

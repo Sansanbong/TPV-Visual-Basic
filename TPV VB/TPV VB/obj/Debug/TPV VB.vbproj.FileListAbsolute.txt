@@ -77,3 +77,22 @@ C:\Users\DAM212\Desktop\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV_VB.R
 C:\Users\DAM212\Desktop\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV_VB.Sesion.resources
 C:\Users\DAM212\Desktop\TPV-Visual-Basic-master\TPV VB\TPV VB\obj\Debug\TPV VB.vbproj.GenerateResource.Cache
 C:\Users\DAM212\Desktop\TPV-Visual-Basic-master\TPV VB\TPV VB\bin\Debug\Biblioteca_TPV.dll
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\bin\Debug\TPV VB.exe.config
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\obj\Debug\TPV VB.exe
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\obj\Debug\TPV VB.xml
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\obj\Debug\TPV VB.pdb
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\bin\Debug\TPV VB.exe
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\bin\Debug\TPV VB.pdb
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\bin\Debug\TPV VB.xml
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\bin\Debug\Biblioteca_TPV.pdb
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\bin\Debug\Biblioteca_TPV.xml
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\bin\Debug\Utiles.pdb
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\bin\Debug\Utiles.xml
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\obj\Debug\TPV VB.vbprojResolveAssemblyReference.cache
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\obj\Debug\TPV_VB.Facturas.resources
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\obj\Debug\TPV_VB.Login.resources
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\obj\Debug\TPV_VB.Inicio.resources
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\obj\Debug\TPV_VB.GestionUsuarios.resources
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\obj\Debug\TPV_VB.Resources.resources
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\obj\Debug\TPV_VB.Sesion.resources
+K:\DAM\DI\Trabajo TPV\TPV VB\TPV VB\obj\Debug\TPV VB.vbproj.GenerateResource.Cache
