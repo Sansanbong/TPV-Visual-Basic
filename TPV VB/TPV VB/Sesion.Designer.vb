@@ -22,6 +22,7 @@ Partial Class Sesion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.grupoModificarPass = New System.Windows.Forms.GroupBox()
         Me.btnCambiarPass = New System.Windows.Forms.Button()
         Me.lblPassNueva = New System.Windows.Forms.Label()
@@ -39,6 +40,7 @@ Partial Class Sesion
         Me.lblDatoNombre = New System.Windows.Forms.Label()
         Me.lblDatoNick = New System.Windows.Forms.Label()
         Me.lblCerrarSesion = New System.Windows.Forms.LinkLabel()
+        Me.ttSesion = New System.Windows.Forms.ToolTip(Me.components)
         Me.grupoModificarPass.SuspendLayout()
         Me.panelDatosUsuario.SuspendLayout()
         Me.SuspendLayout()
@@ -52,7 +54,7 @@ Partial Class Sesion
         Me.grupoModificarPass.Controls.Add(Me.lblPassActual)
         Me.grupoModificarPass.Controls.Add(Me.txtPassActual)
         Me.grupoModificarPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grupoModificarPass.Location = New System.Drawing.Point(484, 143)
+        Me.grupoModificarPass.Location = New System.Drawing.Point(308, 175)
         Me.grupoModificarPass.Name = "grupoModificarPass"
         Me.grupoModificarPass.Size = New System.Drawing.Size(298, 287)
         Me.grupoModificarPass.TabIndex = 3
@@ -67,6 +69,7 @@ Partial Class Sesion
         Me.btnCambiarPass.Size = New System.Drawing.Size(75, 23)
         Me.btnCambiarPass.TabIndex = 4
         Me.btnCambiarPass.Text = "Cambiar"
+        Me.ttSesion.SetToolTip(Me.btnCambiarPass, "Aplicar cambios")
         Me.btnCambiarPass.UseVisualStyleBackColor = True
         '
         'lblPassNueva
@@ -83,9 +86,11 @@ Partial Class Sesion
         '
         Me.txtPassNueva.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txtPassNueva.Location = New System.Drawing.Point(41, 192)
+        Me.txtPassNueva.MaxLength = 11
         Me.txtPassNueva.Name = "txtPassNueva"
         Me.txtPassNueva.Size = New System.Drawing.Size(100, 24)
         Me.txtPassNueva.TabIndex = 2
+        Me.ttSesion.SetToolTip(Me.txtPassNueva, "Introduzca la contraseña que sustituirá la actual.")
         '
         'lblPassActual
         '
@@ -101,9 +106,11 @@ Partial Class Sesion
         '
         Me.txtPassActual.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txtPassActual.Location = New System.Drawing.Point(41, 74)
+        Me.txtPassActual.MaxLength = 11
         Me.txtPassActual.Name = "txtPassActual"
         Me.txtPassActual.Size = New System.Drawing.Size(100, 24)
         Me.txtPassActual.TabIndex = 0
+        Me.ttSesion.SetToolTip(Me.txtPassActual, "Introduzca la contraseña del usuario con el que ha iniciado sesión.")
         '
         'panelDatosUsuario
         '
@@ -117,9 +124,9 @@ Partial Class Sesion
         Me.panelDatosUsuario.Controls.Add(Me.lblDatoCorreo)
         Me.panelDatosUsuario.Controls.Add(Me.lblDatoNombre)
         Me.panelDatosUsuario.Controls.Add(Me.lblDatoNick)
-        Me.panelDatosUsuario.Location = New System.Drawing.Point(85, 143)
+        Me.panelDatosUsuario.Location = New System.Drawing.Point(0, -2)
         Me.panelDatosUsuario.Name = "panelDatosUsuario"
-        Me.panelDatosUsuario.Size = New System.Drawing.Size(251, 280)
+        Me.panelDatosUsuario.Size = New System.Drawing.Size(251, 615)
         Me.panelDatosUsuario.TabIndex = 2
         '
         'Label1
@@ -218,13 +225,17 @@ Partial Class Sesion
         '
         'lblCerrarSesion
         '
+        Me.lblCerrarSesion.ActiveLinkColor = System.Drawing.Color.Purple
         Me.lblCerrarSesion.AutoSize = True
-        Me.lblCerrarSesion.Location = New System.Drawing.Point(578, 99)
+        Me.lblCerrarSesion.BackColor = System.Drawing.Color.Transparent
+        Me.lblCerrarSesion.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.lblCerrarSesion.Location = New System.Drawing.Point(738, 36)
         Me.lblCerrarSesion.Name = "lblCerrarSesion"
-        Me.lblCerrarSesion.Size = New System.Drawing.Size(59, 13)
+        Me.lblCerrarSesion.Size = New System.Drawing.Size(68, 13)
         Me.lblCerrarSesion.TabIndex = 4
         Me.lblCerrarSesion.TabStop = True
-        Me.lblCerrarSesion.Text = "LinkLabel1"
+        Me.lblCerrarSesion.Text = "Cerrar sesión"
+        Me.ttSesion.SetToolTip(Me.lblCerrarSesion, "Salir del usuario con el que has iniciado sesión.")
         '
         'Sesion
         '
@@ -263,4 +274,5 @@ Partial Class Sesion
     Friend WithEvents lblDatosUser As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lblCerrarSesion As System.Windows.Forms.LinkLabel
+    Friend WithEvents ttSesion As System.Windows.Forms.ToolTip
 End Class

@@ -28,18 +28,25 @@ Partial Class Inicio
         Me.GestionUsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultarCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HacerCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.panelBotones = New System.Windows.Forms.Panel()
-        Me.btnCaja = New System.Windows.Forms.Button()
+        Me.btnAyuda = New System.Windows.Forms.Button()
         Me.btnSesion = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
         Me.btnFacturas = New System.Windows.Forms.Button()
+        Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GestiónDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menuStrip.SuspendLayout()
         Me.panelBotones.SuspendLayout()
         Me.SuspendLayout()
         '
         'menuStrip
         '
-        Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosToolStripMenuItem, Me.SesiónToolStripMenuItem})
+        Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SesiónToolStripMenuItem, Me.CajaToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.ToolStripMenuItem1, Me.ProductosToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.menuStrip.Location = New System.Drawing.Point(0, 0)
         Me.menuStrip.Name = "menuStrip"
         Me.menuStrip.Size = New System.Drawing.Size(1161, 24)
@@ -55,6 +62,7 @@ Partial Class Inicio
         '
         'GestionUsuariosToolStripMenuItem
         '
+        Me.GestionUsuariosToolStripMenuItem.Enabled = False
         Me.GestionUsuariosToolStripMenuItem.Name = "GestionUsuariosToolStripMenuItem"
         Me.GestionUsuariosToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
         Me.GestionUsuariosToolStripMenuItem.Text = "Gestión de usuarios"
@@ -72,10 +80,36 @@ Partial Class Inicio
         Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar sesión"
         '
+        'CajaToolStripMenuItem
+        '
+        Me.CajaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultarCajaToolStripMenuItem, Me.HacerCajaToolStripMenuItem})
+        Me.CajaToolStripMenuItem.Name = "CajaToolStripMenuItem"
+        Me.CajaToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
+        Me.CajaToolStripMenuItem.Text = "Caja"
+        '
+        'ConsultarCajaToolStripMenuItem
+        '
+        Me.ConsultarCajaToolStripMenuItem.Enabled = False
+        Me.ConsultarCajaToolStripMenuItem.Name = "ConsultarCajaToolStripMenuItem"
+        Me.ConsultarCajaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultarCajaToolStripMenuItem.Text = "Consultar caja"
+        '
+        'HacerCajaToolStripMenuItem
+        '
+        Me.HacerCajaToolStripMenuItem.Enabled = False
+        Me.HacerCajaToolStripMenuItem.Name = "HacerCajaToolStripMenuItem"
+        Me.HacerCajaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.HacerCajaToolStripMenuItem.Text = "Hacer caja"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(12, 20)
+        '
         'panelBotones
         '
         Me.panelBotones.BackColor = System.Drawing.Color.SteelBlue
-        Me.panelBotones.Controls.Add(Me.btnCaja)
+        Me.panelBotones.Controls.Add(Me.btnAyuda)
         Me.panelBotones.Controls.Add(Me.btnSesion)
         Me.panelBotones.Controls.Add(Me.btnProductos)
         Me.panelBotones.Controls.Add(Me.btnFacturas)
@@ -84,21 +118,23 @@ Partial Class Inicio
         Me.panelBotones.Size = New System.Drawing.Size(275, 615)
         Me.panelBotones.TabIndex = 9
         '
-        'btnCaja
+        'btnAyuda
         '
-        Me.btnCaja.BackColor = System.Drawing.Color.AliceBlue
-        Me.btnCaja.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnCaja.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCaja.Location = New System.Drawing.Point(13, 458)
-        Me.btnCaja.Name = "btnCaja"
-        Me.btnCaja.Size = New System.Drawing.Size(249, 143)
-        Me.btnCaja.TabIndex = 3
-        Me.btnCaja.Text = "CAJA REGISTRADORA"
-        Me.btnCaja.UseVisualStyleBackColor = False
+        Me.btnAyuda.BackColor = System.Drawing.Color.AliceBlue
+        Me.btnAyuda.Enabled = False
+        Me.btnAyuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAyuda.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAyuda.Location = New System.Drawing.Point(13, 458)
+        Me.btnAyuda.Name = "btnAyuda"
+        Me.btnAyuda.Size = New System.Drawing.Size(249, 143)
+        Me.btnAyuda.TabIndex = 3
+        Me.btnAyuda.Text = "AYUDA"
+        Me.btnAyuda.UseVisualStyleBackColor = False
         '
         'btnSesion
         '
         Me.btnSesion.BackColor = System.Drawing.Color.AliceBlue
+        Me.btnSesion.Enabled = False
         Me.btnSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSesion.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnSesion.Location = New System.Drawing.Point(13, 309)
@@ -111,6 +147,7 @@ Partial Class Inicio
         'btnProductos
         '
         Me.btnProductos.BackColor = System.Drawing.Color.AliceBlue
+        Me.btnProductos.Enabled = False
         Me.btnProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnProductos.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnProductos.Location = New System.Drawing.Point(13, 160)
@@ -123,6 +160,7 @@ Partial Class Inicio
         'btnFacturas
         '
         Me.btnFacturas.BackColor = System.Drawing.Color.AliceBlue
+        Me.btnFacturas.Enabled = False
         Me.btnFacturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFacturas.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnFacturas.Location = New System.Drawing.Point(13, 11)
@@ -131,6 +169,27 @@ Partial Class Inicio
         Me.btnFacturas.TabIndex = 0
         Me.btnFacturas.Text = "PEDIDOS"
         Me.btnFacturas.UseVisualStyleBackColor = False
+        '
+        'ProductosToolStripMenuItem
+        '
+        Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestiónDeProductosToolStripMenuItem})
+        Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
+        Me.ProductosToolStripMenuItem.Text = "Productos"
+        '
+        'GestiónDeProductosToolStripMenuItem
+        '
+        Me.GestiónDeProductosToolStripMenuItem.Enabled = False
+        Me.GestiónDeProductosToolStripMenuItem.Name = "GestiónDeProductosToolStripMenuItem"
+        Me.GestiónDeProductosToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
+        Me.GestiónDeProductosToolStripMenuItem.Text = "Gestión de productos"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
+        Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'Inicio
         '
@@ -158,7 +217,7 @@ Partial Class Inicio
     End Sub
     Friend WithEvents menuStrip As System.Windows.Forms.MenuStrip
     Friend WithEvents panelBotones As System.Windows.Forms.Panel
-    Friend WithEvents btnCaja As System.Windows.Forms.Button
+    Friend WithEvents btnAyuda As System.Windows.Forms.Button
     Friend WithEvents btnSesion As System.Windows.Forms.Button
     Friend WithEvents btnProductos As System.Windows.Forms.Button
     Friend WithEvents btnFacturas As System.Windows.Forms.Button
@@ -166,5 +225,12 @@ Partial Class Inicio
     Friend WithEvents GestionUsuariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SesiónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CerrarSesiónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CajaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConsultarCajaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents HacerCajaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GestiónDeProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SalirToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

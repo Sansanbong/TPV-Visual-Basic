@@ -17,6 +17,7 @@ Public Class Sesion
         panelDatosUsuario.BackColor = Color.FromArgb(150, Color.Black)
 
         cargarInfoUsuario()
+        txtPassActual.Focus()
 
         If mainForm.usuario.getDatos.rol = 1 Then
             grupoModificarPass.Enabled = False
@@ -44,6 +45,9 @@ Public Class Sesion
             If modificado = 0 And mensaje.Length = 0 Then
                 mainForm.usuario.setPass(newPass)
                 MsgBox("¡Contraseña modificada!")
+                txtPassActual.Clear()
+                txtPassNueva.Clear()
+
             Else
                 MsgBox("Ha ocurrido un error." & modificado, 48, "Error")
             End If
@@ -71,6 +75,12 @@ Public Class Sesion
 
     Private Sub lblCerrarSesion_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lblCerrarSesion.LinkClicked
         If MsgBox("¿Está seguro de que desea salir de su cuenta?", 52, "Cerrar sesión.") = MsgBoxResult.Yes Then
+            If mainForm.usuario.getDatos.rol = 1 Then
+                mainForm.desactivarFuncionesAdmin()
+            End If
+
+            mainForm.desactivarFuncionesEmpleado()
+
             mainForm.usuario = New Usuario
             mainForm.formLogin.Show()
             Dispose()
