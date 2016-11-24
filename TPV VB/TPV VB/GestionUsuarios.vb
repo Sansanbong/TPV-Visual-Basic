@@ -3,6 +3,13 @@ Imports Biblioteca_TPV.ficheros
 Imports Utiles.util
 
 Public Class GestionUsuarios
+    '+------------------------------TODO----------------------------------+
+    '|                                                                    |
+    '|                                                                    |
+    '|    Borrar usuario de la lista cuando se ha borrado del fichero     |
+    '|                 Active control = control(focus)                    |
+    '|                                                                    |
+    '+--------------------------------------------------------------------+
 
     Private acceso As AccesoFicheros
     Private usuario As Usuario
@@ -20,6 +27,7 @@ Public Class GestionUsuarios
 
         Me.Location = New Point(275, 0)
         cargarUsuarios()
+        txtNombreUsuario.Focus()
 
     End Sub
 

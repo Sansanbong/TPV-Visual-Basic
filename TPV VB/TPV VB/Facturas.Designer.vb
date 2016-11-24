@@ -99,6 +99,9 @@ Partial Class Facturas
         Me.btnCat1 = New System.Windows.Forms.Button()
         Me.timerFactura = New System.Windows.Forms.Timer(Me.components)
         Me.ttProductos = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblEuro = New System.Windows.Forms.Label()
+        Me.lblTotalPedido = New System.Windows.Forms.Label()
         Me.panelCalculadora.SuspendLayout()
         Me.panelCategorias.SuspendLayout()
         Me.SuspendLayout()
@@ -143,9 +146,9 @@ Partial Class Facturas
         Me.btnCobrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.btnCobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCobrar.Font = New System.Drawing.Font("Calibri", 16.25!, System.Drawing.FontStyle.Bold)
-        Me.btnCobrar.Location = New System.Drawing.Point(724, 354)
+        Me.btnCobrar.Location = New System.Drawing.Point(609, 500)
         Me.btnCobrar.Name = "btnCobrar"
-        Me.btnCobrar.Size = New System.Drawing.Size(133, 157)
+        Me.btnCobrar.Size = New System.Drawing.Size(104, 97)
         Me.btnCobrar.TabIndex = 69
         Me.btnCobrar.Text = "COBRAR"
         Me.btnCobrar.UseVisualStyleBackColor = False
@@ -156,7 +159,7 @@ Partial Class Facturas
         Me.lbError.BackColor = System.Drawing.Color.Transparent
         Me.lbError.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Bold)
         Me.lbError.ForeColor = System.Drawing.Color.Red
-        Me.lbError.Location = New System.Drawing.Point(398, 577)
+        Me.lbError.Location = New System.Drawing.Point(398, 348)
         Me.lbError.Name = "lbError"
         Me.lbError.Size = New System.Drawing.Size(38, 17)
         Me.lbError.TabIndex = 68
@@ -168,7 +171,7 @@ Partial Class Facturas
         Me.lbCalcBot.BackColor = System.Drawing.Color.AliceBlue
         Me.lbCalcBot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbCalcBot.Font = New System.Drawing.Font("Calibri", 16.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbCalcBot.Location = New System.Drawing.Point(604, 421)
+        Me.lbCalcBot.Location = New System.Drawing.Point(609, 429)
         Me.lbCalcBot.Name = "lbCalcBot"
         Me.lbCalcBot.Size = New System.Drawing.Size(104, 44)
         Me.lbCalcBot.TabIndex = 67
@@ -180,7 +183,7 @@ Partial Class Facturas
         Me.lbCalcTop.BackColor = System.Drawing.Color.AliceBlue
         Me.lbCalcTop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lbCalcTop.Font = New System.Drawing.Font("Calibri", 16.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbCalcTop.Location = New System.Drawing.Point(604, 355)
+        Me.lbCalcTop.Location = New System.Drawing.Point(609, 378)
         Me.lbCalcTop.Name = "lbCalcTop"
         Me.lbCalcTop.Size = New System.Drawing.Size(104, 43)
         Me.lbCalcTop.TabIndex = 66
@@ -209,7 +212,7 @@ Partial Class Facturas
         Me.panelCalculadora.Controls.Add(Me.btnCalc9)
         Me.panelCalculadora.Controls.Add(Me.btnCalc8)
         Me.panelCalculadora.Controls.Add(Me.btnCalc7)
-        Me.panelCalculadora.Location = New System.Drawing.Point(396, 350)
+        Me.panelCalculadora.Location = New System.Drawing.Point(401, 373)
         Me.panelCalculadora.Name = "panelCalculadora"
         Me.panelCalculadora.Size = New System.Drawing.Size(202, 232)
         Me.panelCalculadora.TabIndex = 65
@@ -502,11 +505,11 @@ Partial Class Facturas
         Me.lblTot.AutoSize = True
         Me.lblTot.BackColor = System.Drawing.Color.Transparent
         Me.lblTot.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
-        Me.lblTot.Location = New System.Drawing.Point(805, 19)
+        Me.lblTot.Location = New System.Drawing.Point(754, 19)
         Me.lblTot.Name = "lblTot"
-        Me.lblTot.Size = New System.Drawing.Size(44, 17)
+        Me.lblTot.Size = New System.Drawing.Size(112, 17)
         Me.lblTot.TabIndex = 57
-        Me.lblTot.Text = "TOTAL"
+        Me.lblTot.Text = "TOTAL PRODUCTO"
         '
         'lblProd
         '
@@ -1033,6 +1036,40 @@ Partial Class Facturas
         Me.ttProductos.BackColor = System.Drawing.Color.LemonChiffon
         Me.ttProductos.IsBalloon = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Location = New System.Drawing.Point(706, 347)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(96, 17)
+        Me.Label1.TabIndex = 71
+        Me.Label1.Text = "TOTAL PEDIDO:"
+        '
+        'lblEuro
+        '
+        Me.lblEuro.AutoSize = True
+        Me.lblEuro.BackColor = System.Drawing.Color.Transparent
+        Me.lblEuro.Font = New System.Drawing.Font("Calibri", 10.25!, System.Drawing.FontStyle.Bold)
+        Me.lblEuro.Location = New System.Drawing.Point(855, 347)
+        Me.lblEuro.Name = "lblEuro"
+        Me.lblEuro.Size = New System.Drawing.Size(18, 17)
+        Me.lblEuro.TabIndex = 72
+        Me.lblEuro.Text = " €"
+        '
+        'lblTotalPedido
+        '
+        Me.lblTotalPedido.BackColor = System.Drawing.Color.AliceBlue
+        Me.lblTotalPedido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblTotalPedido.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalPedido.Location = New System.Drawing.Point(808, 343)
+        Me.lblTotalPedido.Name = "lblTotalPedido"
+        Me.lblTotalPedido.Size = New System.Drawing.Size(49, 22)
+        Me.lblTotalPedido.TabIndex = 73
+        Me.lblTotalPedido.Text = "0"
+        Me.lblTotalPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'Facturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1040,6 +1077,9 @@ Partial Class Facturas
         Me.BackgroundImage = Global.TPV_VB.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(882, 612)
+        Me.Controls.Add(Me.lblTotalPedido)
+        Me.Controls.Add(Me.lblEuro)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCobrar)
         Me.Controls.Add(Me.lbError)
         Me.Controls.Add(Me.lbCalcBot)
@@ -1149,4 +1189,7 @@ Partial Class Facturas
     Friend WithEvents btnCat1 As System.Windows.Forms.Button
     Friend WithEvents timerFactura As System.Windows.Forms.Timer
     Friend WithEvents ttProductos As System.Windows.Forms.ToolTip
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblEuro As System.Windows.Forms.Label
+    Friend WithEvents lblTotalPedido As System.Windows.Forms.Label
 End Class

@@ -22,6 +22,7 @@ Partial Class GestionUsuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.grupoBorradoUsuario = New System.Windows.Forms.GroupBox()
         Me.btnRefrescar = New System.Windows.Forms.Button()
         Me.btnBorrarModificar = New System.Windows.Forms.Button()
@@ -29,21 +30,22 @@ Partial Class GestionUsuarios
         Me.grupoInsercionUsuario = New System.Windows.Forms.GroupBox()
         Me.lblNombreUsuario = New System.Windows.Forms.Label()
         Me.txtNombreUsuario = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.lblContrasenya = New System.Windows.Forms.Label()
         Me.txtPass = New System.Windows.Forms.TextBox()
-        Me.btnInsertar = New System.Windows.Forms.Button()
         Me.txtMail = New System.Windows.Forms.TextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
+        Me.btnInsertar = New System.Windows.Forms.Button()
         Me.txtTelefono = New System.Windows.Forms.TextBox()
         Me.lblTelefono = New System.Windows.Forms.Label()
-        Me.txtDNI = New System.Windows.Forms.TextBox()
-        Me.lblDNI = New System.Windows.Forms.Label()
-        Me.txtRol = New System.Windows.Forms.TextBox()
-        Me.lblNombreEmpleado = New System.Windows.Forms.Label()
-        Me.txtNombreEmpleado = New System.Windows.Forms.TextBox()
         Me.lblRol = New System.Windows.Forms.Label()
-        Me.lblApellidos = New System.Windows.Forms.Label()
+        Me.txtDNI = New System.Windows.Forms.TextBox()
         Me.txtApellidos = New System.Windows.Forms.TextBox()
+        Me.lblDNI = New System.Windows.Forms.Label()
+        Me.lblApellidos = New System.Windows.Forms.Label()
+        Me.txtRol = New System.Windows.Forms.TextBox()
+        Me.txtNombreEmpleado = New System.Windows.Forms.TextBox()
+        Me.lblNombreEmpleado = New System.Windows.Forms.Label()
+        Me.ttGestionUsuarios = New System.Windows.Forms.ToolTip(Me.components)
         Me.grupoBorradoUsuario.SuspendLayout()
         Me.grupoInsercionUsuario.SuspendLayout()
         Me.SuspendLayout()
@@ -69,7 +71,8 @@ Partial Class GestionUsuarios
         Me.btnRefrescar.Location = New System.Drawing.Point(32, 45)
         Me.btnRefrescar.Name = "btnRefrescar"
         Me.btnRefrescar.Size = New System.Drawing.Size(36, 31)
-        Me.btnRefrescar.TabIndex = 9
+        Me.btnRefrescar.TabIndex = 7
+        Me.ttGestionUsuarios.SetToolTip(Me.btnRefrescar, "Refrescar la lista.")
         Me.btnRefrescar.UseVisualStyleBackColor = True
         '
         'btnBorrarModificar
@@ -78,8 +81,9 @@ Partial Class GestionUsuarios
         Me.btnBorrarModificar.Location = New System.Drawing.Point(297, 50)
         Me.btnBorrarModificar.Name = "btnBorrarModificar"
         Me.btnBorrarModificar.Size = New System.Drawing.Size(67, 23)
-        Me.btnBorrarModificar.TabIndex = 8
+        Me.btnBorrarModificar.TabIndex = 9
         Me.btnBorrarModificar.Text = "Borrar"
+        Me.ttGestionUsuarios.SetToolTip(Me.btnBorrarModificar, "Borrar usuario seleccionado en la lista.")
         Me.btnBorrarModificar.UseVisualStyleBackColor = True
         '
         'comboUsuarios
@@ -90,7 +94,7 @@ Partial Class GestionUsuarios
         Me.comboUsuarios.Location = New System.Drawing.Point(74, 50)
         Me.comboUsuarios.Name = "comboUsuarios"
         Me.comboUsuarios.Size = New System.Drawing.Size(208, 23)
-        Me.comboUsuarios.TabIndex = 7
+        Me.comboUsuarios.TabIndex = 8
         '
         'grupoInsercionUsuario
         '
@@ -138,6 +142,17 @@ Partial Class GestionUsuarios
         Me.txtNombreUsuario.Name = "txtNombreUsuario"
         Me.txtNombreUsuario.Size = New System.Drawing.Size(100, 20)
         Me.txtNombreUsuario.TabIndex = 1
+        Me.ttGestionUsuarios.SetToolTip(Me.txtNombreUsuario, "Introduzca el nick o nombre de acceso del empleado.")
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(62, 261)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(118, 16)
+        Me.Label20.TabIndex = 14
+        Me.Label20.Text = "Correo electrónico"
         '
         'lblContrasenya
         '
@@ -157,16 +172,7 @@ Partial Class GestionUsuarios
         Me.txtPass.Name = "txtPass"
         Me.txtPass.Size = New System.Drawing.Size(100, 20)
         Me.txtPass.TabIndex = 3
-        '
-        'btnInsertar
-        '
-        Me.btnInsertar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInsertar.Location = New System.Drawing.Point(584, 190)
-        Me.btnInsertar.Name = "btnInsertar"
-        Me.btnInsertar.Size = New System.Drawing.Size(84, 33)
-        Me.btnInsertar.TabIndex = 18
-        Me.btnInsertar.Text = "Insertar"
-        Me.btnInsertar.UseVisualStyleBackColor = True
+        Me.ttGestionUsuarios.SetToolTip(Me.txtPass, "Introduzca la clave de acceso a la cuenta del empleado.")
         '
         'txtMail
         '
@@ -176,16 +182,18 @@ Partial Class GestionUsuarios
         Me.txtMail.Name = "txtMail"
         Me.txtMail.Size = New System.Drawing.Size(317, 20)
         Me.txtMail.TabIndex = 15
+        Me.ttGestionUsuarios.SetToolTip(Me.txtMail, "Introduzca el correo electrónico del empleado.")
         '
-        'Label20
+        'btnInsertar
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(62, 261)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(118, 16)
-        Me.Label20.TabIndex = 14
-        Me.Label20.Text = "Correo electrónico"
+        Me.btnInsertar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInsertar.Location = New System.Drawing.Point(584, 190)
+        Me.btnInsertar.Name = "btnInsertar"
+        Me.btnInsertar.Size = New System.Drawing.Size(84, 33)
+        Me.btnInsertar.TabIndex = 18
+        Me.btnInsertar.Text = "Insertar"
+        Me.ttGestionUsuarios.SetToolTip(Me.btnInsertar, "Almacenar usuario.")
+        Me.btnInsertar.UseVisualStyleBackColor = True
         '
         'txtTelefono
         '
@@ -196,6 +204,7 @@ Partial Class GestionUsuarios
         Me.txtTelefono.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtTelefono.Size = New System.Drawing.Size(70, 20)
         Me.txtTelefono.TabIndex = 13
+        Me.ttGestionUsuarios.SetToolTip(Me.txtTelefono, "Introduzca el número de teléfono del empleado.")
         '
         'lblTelefono
         '
@@ -207,6 +216,16 @@ Partial Class GestionUsuarios
         Me.lblTelefono.TabIndex = 12
         Me.lblTelefono.Text = "Número de teléfono"
         '
+        'lblRol
+        '
+        Me.lblRol.AutoSize = True
+        Me.lblRol.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblRol.Location = New System.Drawing.Point(151, 171)
+        Me.lblRol.Name = "lblRol"
+        Me.lblRol.Size = New System.Drawing.Size(29, 16)
+        Me.lblRol.TabIndex = 8
+        Me.lblRol.Text = "Rol"
+        '
         'txtDNI
         '
         Me.txtDNI.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -215,6 +234,17 @@ Partial Class GestionUsuarios
         Me.txtDNI.Name = "txtDNI"
         Me.txtDNI.Size = New System.Drawing.Size(70, 20)
         Me.txtDNI.TabIndex = 11
+        Me.ttGestionUsuarios.SetToolTip(Me.txtDNI, "Introduzca el DNI del empleado.")
+        '
+        'txtApellidos
+        '
+        Me.txtApellidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtApellidos.Location = New System.Drawing.Point(186, 138)
+        Me.txtApellidos.MaxLength = 26
+        Me.txtApellidos.Name = "txtApellidos"
+        Me.txtApellidos.Size = New System.Drawing.Size(170, 20)
+        Me.txtApellidos.TabIndex = 7
+        Me.ttGestionUsuarios.SetToolTip(Me.txtApellidos, "Introduzca los apellidos del empleado.")
         '
         'lblDNI
         '
@@ -226,45 +256,6 @@ Partial Class GestionUsuarios
         Me.lblDNI.TabIndex = 10
         Me.lblDNI.Text = "DNI"
         '
-        'txtRol
-        '
-        Me.txtRol.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtRol.Location = New System.Drawing.Point(186, 168)
-        Me.txtRol.MaxLength = 1
-        Me.txtRol.Name = "txtRol"
-        Me.txtRol.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtRol.Size = New System.Drawing.Size(26, 20)
-        Me.txtRol.TabIndex = 9
-        '
-        'lblNombreEmpleado
-        '
-        Me.lblNombreEmpleado.AutoSize = True
-        Me.lblNombreEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombreEmpleado.Location = New System.Drawing.Point(39, 111)
-        Me.lblNombreEmpleado.Name = "lblNombreEmpleado"
-        Me.lblNombreEmpleado.Size = New System.Drawing.Size(141, 16)
-        Me.lblNombreEmpleado.TabIndex = 4
-        Me.lblNombreEmpleado.Text = "Nombre de empleado"
-        '
-        'txtNombreEmpleado
-        '
-        Me.txtNombreEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreEmpleado.Location = New System.Drawing.Point(186, 108)
-        Me.txtNombreEmpleado.MaxLength = 25
-        Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
-        Me.txtNombreEmpleado.Size = New System.Drawing.Size(170, 20)
-        Me.txtNombreEmpleado.TabIndex = 5
-        '
-        'lblRol
-        '
-        Me.lblRol.AutoSize = True
-        Me.lblRol.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblRol.Location = New System.Drawing.Point(151, 171)
-        Me.lblRol.Name = "lblRol"
-        Me.lblRol.Size = New System.Drawing.Size(29, 16)
-        Me.lblRol.TabIndex = 8
-        Me.lblRol.Text = "Rol"
-        '
         'lblApellidos
         '
         Me.lblApellidos.AutoSize = True
@@ -275,14 +266,36 @@ Partial Class GestionUsuarios
         Me.lblApellidos.TabIndex = 6
         Me.lblApellidos.Text = "Apellidos"
         '
-        'txtApellidos
+        'txtRol
         '
-        Me.txtApellidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtApellidos.Location = New System.Drawing.Point(186, 138)
-        Me.txtApellidos.MaxLength = 26
-        Me.txtApellidos.Name = "txtApellidos"
-        Me.txtApellidos.Size = New System.Drawing.Size(170, 20)
-        Me.txtApellidos.TabIndex = 7
+        Me.txtRol.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtRol.Location = New System.Drawing.Point(186, 168)
+        Me.txtRol.MaxLength = 1
+        Me.txtRol.Name = "txtRol"
+        Me.txtRol.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.txtRol.Size = New System.Drawing.Size(26, 20)
+        Me.txtRol.TabIndex = 9
+        Me.ttGestionUsuarios.SetToolTip(Me.txtRol, "Introduzca el rol del empleado (1 ó 2)")
+        '
+        'txtNombreEmpleado
+        '
+        Me.txtNombreEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreEmpleado.Location = New System.Drawing.Point(186, 108)
+        Me.txtNombreEmpleado.MaxLength = 25
+        Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
+        Me.txtNombreEmpleado.Size = New System.Drawing.Size(170, 20)
+        Me.txtNombreEmpleado.TabIndex = 5
+        Me.ttGestionUsuarios.SetToolTip(Me.txtNombreEmpleado, "Introduzca el nombre real del empleado.")
+        '
+        'lblNombreEmpleado
+        '
+        Me.lblNombreEmpleado.AutoSize = True
+        Me.lblNombreEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombreEmpleado.Location = New System.Drawing.Point(39, 111)
+        Me.lblNombreEmpleado.Name = "lblNombreEmpleado"
+        Me.lblNombreEmpleado.Size = New System.Drawing.Size(141, 16)
+        Me.lblNombreEmpleado.TabIndex = 4
+        Me.lblNombreEmpleado.Text = "Nombre de empleado"
         '
         'GestionUsuarios
         '
@@ -324,4 +337,5 @@ Partial Class GestionUsuarios
     Friend WithEvents lblRol As System.Windows.Forms.Label
     Friend WithEvents lblApellidos As System.Windows.Forms.Label
     Friend WithEvents txtApellidos As System.Windows.Forms.TextBox
+    Friend WithEvents ttGestionUsuarios As System.Windows.Forms.ToolTip
 End Class

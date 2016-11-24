@@ -225,6 +225,7 @@ Public Class Facturas
         Dim precio As String = ""
         Dim total As String = ""
 
+
         For i = 0 To factura.getLineasPedido.Count - 1
             linea = factura.getLineasPedido.Item(i)
             lbCodProd.Items.Add(linea.getProducto.getStructure.id)
@@ -243,6 +244,13 @@ Public Class Facturas
             btnImprimir.Enabled = False
             btnVistaPrevia.Enabled = False
         End If
+
+        Try
+            lblTotalPedido.Text = factura.obtenerImporte
+        Catch ex As Exception
+            lblTotalPedido.Text = 0
+        End Try
+
 
     End Sub
 
@@ -333,6 +341,8 @@ Public Class Facturas
         lbTotal.SelectedIndex = selectedIndex
 
     End Sub
+
+    
 
     '------------------------------------- IMPRESIÓN ----------------------------------------------
     '----------------------------------------------------------------------------------------------
@@ -513,6 +523,8 @@ Public Class Facturas
         lbCalcBot.Text = "0,00"
     End Sub
 
+
+
     Private Sub botonVerde()
         If lbCodProd.SelectedIndex <> -1 Then
             Dim producto As Producto = buscarProducto(lbCodProd.SelectedItem)
@@ -587,4 +599,17 @@ Public Class Facturas
         timerFactura.Stop()
     End Sub
 
+
+    Private Sub btnCobrar_Click(sender As Object, e As EventArgs) Handles btnCobrar.Click
+        Try
+
+            factura.guardarImporte()
+
+        Catch ex As Exception
+            'Log errores.txt
+        End Try
+
+    End Sub
+
+   
 End Class
